@@ -6,10 +6,16 @@ namespace Spotlight.Element
     public class Wall
     {
         private Wall() { }
-        public static ADDB.CurtainGrid CurtainGrid(DYDB.Wall wall)
+        
+        public static ADDB.CurtainGrid CurtainGrid(ADDB.Wall Wall)
         {
-            ADDB.Wall addbWall = wall.InternalElement as ADDB.Wall;
-            return addbWall.CurtainGrid;
+            return Wall.CurtainGrid;
+        }
+
+        public static ADDB.LocationCurve LocationCurve(ADDB.Wall Wall)
+        {
+            ADDB.LocationCurve locationCurve = Wall.Location as ADDB.LocationCurve;
+            return locationCurve;
         }
     }
 }

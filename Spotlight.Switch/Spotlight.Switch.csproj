@@ -4,11 +4,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{56A6F571-6035-4201-B0E4-D55235FB0AC8}</ProjectGuid>
+        <ProjectGuid>{E667CF27-B2FD-424A-8803-E334A77C61B5}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Spotlight.Element</RootNamespace>
-        <AssemblyName>Spotlight.Element</AssemblyName>
+        <RootNamespace>Spotlight.Switch</RootNamespace>
+        <AssemblyName>Spotlight.Switch</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -62,14 +62,13 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="CurtainGrid.cs" />
-        <Compile Include="Location.cs" />
+        <Compile Include="Element.cs" />
+        <Compile Include="Geometry.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Wall.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="images\logo.png" />
-      <Content Include="Spotlight.Element_DynamoCustomization.xml">
+      <Content Include="Spotlight.Switch_DynamoCustomization.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>

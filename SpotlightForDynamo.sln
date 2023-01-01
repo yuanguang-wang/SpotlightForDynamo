@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.Element", "Spotlight.Element\Spotlight.Element.csproj", "{56A6F571-6035-4201-B0E4-D55235FB0AC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.Switch", "Spotlight.Switch\Spotlight.Switch.csproj", "{E667CF27-B2FD-424A-8803-E334A77C61B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{56A6F571-6035-4201-B0E4-D55235FB0AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56A6F571-6035-4201-B0E4-D55235FB0AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56A6F571-6035-4201-B0E4-D55235FB0AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E667CF27-B2FD-424A-8803-E334A77C61B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E667CF27-B2FD-424A-8803-E334A77C61B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E667CF27-B2FD-424A-8803-E334A77C61B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E667CF27-B2FD-424A-8803-E334A77C61B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

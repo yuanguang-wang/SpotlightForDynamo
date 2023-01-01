@@ -1,13 +1,14 @@
-﻿
+﻿using ADDB = Autodesk.Revit.DB;
+using DYDB = Revit.Elements;
 
 namespace Spotlight.Element
 {
     public class CurtainGrid
     {
         private CurtainGrid() { }
-        public static double MultiplyByTwo(double inputNumber)
+        public static void AddGridLine(ADDB.CurtainGrid curtainGrid, bool isUGridLine, ADDB.XYZ xyz, bool oneSegmentOnly)
         {
-            return inputNumber * 2.0;
+            curtainGrid.AddGridLine(isUGridLine, xyz, oneSegmentOnly);
         }
     }
 }
