@@ -44,6 +44,18 @@
           <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.12.0.5650\lib\net48\ProtoGeometry.dll</HintPath>
           <Private>False</Private>
         </Reference>
+        <Reference Include="RevitAPI">
+          <HintPath>..\..\dll\RevitAPI.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="RevitNodes">
+          <HintPath>..\..\dll\RevitNodes.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="RevitServices">
+          <HintPath>..\..\dll\RevitServices.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -52,6 +64,7 @@
     <ItemGroup>
         <Compile Include="CurtainGrid.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Wall.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="images\logo.png" />
