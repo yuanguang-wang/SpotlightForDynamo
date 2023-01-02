@@ -9,11 +9,11 @@ namespace Spotlight.Element
         /// <summary>
         /// test3
         /// </summary>
-        /// <param name="LocationCurve"></param>
+        /// <param name="locationCurve"></param>
         /// <returns></returns>
-        public static ADDB.Curve Curve(ADDB.LocationCurve LocationCurve)
+        public static ADDB.Curve Curve(ADDB.LocationCurve locationCurve)
         {
-            return LocationCurve.Curve;
+            return locationCurve.Curve;
         }
     }
 }

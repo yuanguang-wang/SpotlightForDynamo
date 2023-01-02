@@ -5,9 +5,9 @@ using DYDB = Revit.Elements;
 
 namespace Spotlight.Switch
 {
-    public class Geometry
+    public class GeometrySwitch
     {
-        private Geometry() { }
+        private GeometrySwitch() { }
 
         public static ADDB.XYZ DynamoPointToRevitXyz(DYDG.Point DynamoPoint)
         {

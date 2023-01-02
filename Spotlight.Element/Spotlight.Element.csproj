@@ -64,19 +64,46 @@
     <ItemGroup>
         <Compile Include="CurtainGrid.cs" />
         <Compile Include="Location.cs" />
+        <Compile Include="PackageImages.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PackageImages.resx</DependentUpon>
+        </Compile>
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Wall.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="images\logo.png" />
+      <EmbeddedResource Include="images\Spotlight.Element.Large.png">
+        <DependentUpon>PackageImages.resx</DependentUpon>
+      </EmbeddedResource>
       <Content Include="Spotlight.Element_DynamoCustomization.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <EmbeddedResource Include="images\Spotlight.Element.Small.png">
+        <DependentUpon>PackageImages.resx</DependentUpon>
+      </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
     </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="PackageImages.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>PackageImages.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+    <Target Name="BeforeBuild">
+        <GetReferenceAssemblyPaths TargetFrameworkMoniker=".NETFramework, Version=v4.8">
+            <Output TaskParameter="FullFrameworkReferenceAssemblyPaths" PropertyName="FrameworkAssembliesPath" />
+        </GetReferenceAssemblyPaths>
+        <GenerateResource SdkToolsPath="$(TargetFrameworkSDKToolsDirectory)" UseSourcePath="true" Sources="$(ProjectDir)PackageImages.resx" OutputResources="$(ProjectDir)PackageImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
+        <GenerateResource UseSourcePath="true" Sources="$(ProjectDir)PackageImages.resx" OutputResources="$(ProjectDir)PackageImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
+        <AL TargetType="library" EmbedResources="$(ProjectDir)PackageImages.resources" OutputAssembly="$(OutDir)Package.customization.dll" />
+    </Target>
+    
     <Target Name="AfterBuild">
         <ItemGroup>
             <Dlls Include="$(OutDir)*.dll" />
@@ -91,5 +118,6 @@
         <MakeDir Directories="/Volumes/Spotlight/dyf" />
         <MakeDir Directories="/Volumes/Spotlight/extra" />
     </Target>
+
 
 </Project>
