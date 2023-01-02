@@ -7,7 +7,7 @@ namespace Spotlight.Element
     {
         private Location() { }
         /// <summary>
-        /// test
+        /// test3
         /// </summary>
         /// <param name="LocationCurve"></param>
         /// <returns></returns>
