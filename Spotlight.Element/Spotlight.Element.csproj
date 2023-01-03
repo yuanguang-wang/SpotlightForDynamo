@@ -64,47 +64,50 @@
     <ItemGroup>
         <Compile Include="CurtainGrid.cs" />
         <Compile Include="Location.cs" />
-        <Compile Include="PackageImages.Designer.cs">
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Resources\SpotlightElementImages.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
-          <DependentUpon>PackageImages.resx</DependentUpon>
+          <DependentUpon>SpotlightElementImages.resx</DependentUpon>
         </Compile>
-        <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Wall.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Content Include="images\logo.png" />
-      <EmbeddedResource Include="images\Spotlight.Element.Large.png">
-        <DependentUpon>PackageImages.resx</DependentUpon>
-      </EmbeddedResource>
+      <Content Include="Resources\logo.png" />
       <Content Include="Spotlight.Element_DynamoCustomization.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
-      <EmbeddedResource Include="images\Spotlight.Element.Small.png">
-        <DependentUpon>PackageImages.resx</DependentUpon>
-      </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
-      <EmbeddedResource Include="PackageImages.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>PackageImages.Designer.cs</LastGenOutput>
+      <EmbeddedResource Include="Resources\SpotlightElementImages.resx">
+        <LastGenOutput>SpotlightElementImages.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Resources\Spotlight.Element.Large.png">
+        <DependentUpon>SpotlightElementImages.resx</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Resources\Spotlight.Element.Small.png">
+        <DependentUpon>SpotlightElementImages.resx</DependentUpon>
       </EmbeddedResource>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    
+    <Target Name="AfterBuild">
 
-    <Target Name="BeforeBuild">
+        <!-- Get System.Drawing.dll -->
         <GetReferenceAssemblyPaths TargetFrameworkMoniker=".NETFramework, Version=v4.8">
             <Output TaskParameter="FullFrameworkReferenceAssemblyPaths" PropertyName="FrameworkAssembliesPath" />
         </GetReferenceAssemblyPaths>
-        <GenerateResource SdkToolsPath="$(TargetFrameworkSDKToolsDirectory)" UseSourcePath="true" Sources="$(ProjectDir)PackageImages.resx" OutputResources="$(ProjectDir)PackageImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
-        <GenerateResource UseSourcePath="true" Sources="$(ProjectDir)PackageImages.resx" OutputResources="$(ProjectDir)PackageImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
-        <AL TargetType="library" EmbedResources="$(ProjectDir)PackageImages.resources" OutputAssembly="$(OutDir)Package.customization.dll" />
-    </Target>
-    
-    <Target Name="AfterBuild">
+        <!-- Get assembly -->
+        <GetAssemblyIdentity AssemblyFiles="$(OutDir)$(TargetName).dll">
+            <Output TaskParameter="Assemblies" ItemName="AssemblyInfo" />
+        </GetAssemblyIdentity>
+        <!-- Generate customization dll -->
+        <GenerateResource  SdkToolsPath="$(TargetFrameworkSDKToolsDirectory)" UseSourcePath="true" Sources="$(ProjectDir)\Resources\SpotlightElementImages.resx" OutputResources="$(ProjectDir)\Resources\SpotlightElementImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
+        <AL SdkToolsPath="$(TargetFrameworkSDKToolsDirectory)"  TargetType="library" EmbedResources="$(ProjectDir)\Resources\SpotlightElementImages.resources" OutputAssembly="$(OutDir)SpotlightElementImages.customization.dll" Version="%(AssemblyInfo.Version)" />
+        
         <ItemGroup>
             <Dlls Include="$(OutDir)*.dll" />
             <Pdbs Include="$(OutDir)*.pdb" />
@@ -117,6 +120,8 @@
         <Copy SourceFiles="@(Configs)" DestinationFolder="/Volumes/Spotlight/bin" />
         <MakeDir Directories="/Volumes/Spotlight/dyf" />
         <MakeDir Directories="/Volumes/Spotlight/extra" />
+
+
     </Target>
 
 

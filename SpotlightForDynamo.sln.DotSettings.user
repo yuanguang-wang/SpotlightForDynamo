@@ -3,7 +3,9 @@
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Fyuanguang_002Ewang_002FGoogleDrive_002FProjects_002Fdev_002Frevitapi_002FSpotlightForDynamo_002Fdll_002FRevitNodes_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Fyuanguang_002Ewang_002FGoogleDrive_002FProjects_002Fdev_002Frevitapi_002FSpotlightForDynamo_002Fdll_002FRevitServices_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/CustomBuildToolPath/@EntryValue">/Library/Frameworks/Mono.framework/Versions/6.12.0/lib/mono/msbuild/15.0/bin/MSBuild.dll</s:String>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Spotlight_002EElement_002FPackageImages/@EntryIndexedValue">True</s:Boolean>
+	
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Spotlight_002EElement_002FResources_002FSpotlightElementImages/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean>
 	
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=ADDB/@EntryIndexedValue">True</s:Boolean>
