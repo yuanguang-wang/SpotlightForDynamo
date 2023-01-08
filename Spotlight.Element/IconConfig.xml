@@ -1,1 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<project>
+
+<!-- Get System.Drawing.dll -->
+<GetReferenceAssemblyPaths TargetFrameworkMoniker=".NETFramework, Version=v4.8">
+    <Output TaskParameter="FullFrameworkReferenceAssemblyPaths" PropertyName="FrameworkAssembliesPath" />
+</GetReferenceAssemblyPaths>
+        <!-- Get assembly -->
+<GetAssemblyIdentity AssemblyFiles="$(OutDir)$(TargetName).dll">
+<Output TaskParameter="Assemblies" ItemName="AssemblyInfo" />
+</GetAssemblyIdentity>
+        <!-- Generate customization dll -->
+<GenerateResource SdkToolsPath="$(TargetFrameworkSDKToolsDirectory)" UseSourcePath="true" Sources="$(ProjectDir)\Resources\SpotlightElementImages.resx" OutputResources="$(ProjectDir)\Resources\SpotlightElementImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
+<AL SdkToolsPath="$(TargetFrameworkSDKToolsDirectory)" TargetType="library" EmbedResources="$(ProjectDir)\Resources\SpotlightElementImages.resources" OutputAssembly="$(OutDir)SpotlightElementImages.customization.dll" Version="%(AssemblyInfo.Version)" />
+
+</project>

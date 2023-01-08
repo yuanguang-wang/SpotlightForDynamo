@@ -32,6 +32,10 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="DynamoCore">
+          <HintPath>..\..\dll\DynamoCore.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
         <Reference Include="DynamoServices, Version=2.12.0.5650, Culture=neutral, processorArchitecture=MSIL">
           <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.2.12.0.5650\lib\net48\DynamoServices.dll</HintPath>
           <Private>False</Private>
@@ -73,6 +77,7 @@
         <Compile Include="Wall.cs" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="IconConfig.xml" />
       <Content Include="Resources\logo.png" />
       <Content Include="Spotlight.Element_DynamoCustomization.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -95,18 +100,6 @@
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     
     <Target Name="AfterBuild">
-
-        <!-- Get System.Drawing.dll -->
-        <GetReferenceAssemblyPaths TargetFrameworkMoniker=".NETFramework, Version=v4.8">
-            <Output TaskParameter="FullFrameworkReferenceAssemblyPaths" PropertyName="FrameworkAssembliesPath" />
-        </GetReferenceAssemblyPaths>
-        <!-- Get assembly -->
-        <GetAssemblyIdentity AssemblyFiles="$(OutDir)$(TargetName).dll">
-            <Output TaskParameter="Assemblies" ItemName="AssemblyInfo" />
-        </GetAssemblyIdentity>
-        <!-- Generate customization dll -->
-        <GenerateResource  SdkToolsPath="$(TargetFrameworkSDKToolsDirectory)" UseSourcePath="true" Sources="$(ProjectDir)\Resources\SpotlightElementImages.resx" OutputResources="$(ProjectDir)\Resources\SpotlightElementImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
-        <AL SdkToolsPath="$(TargetFrameworkSDKToolsDirectory)"  TargetType="library" EmbedResources="$(ProjectDir)\Resources\SpotlightElementImages.resources" OutputAssembly="$(OutDir)SpotlightElementImages.customization.dll" Version="%(AssemblyInfo.Version)" />
         
         <ItemGroup>
             <Dlls Include="$(OutDir)*.dll" />
