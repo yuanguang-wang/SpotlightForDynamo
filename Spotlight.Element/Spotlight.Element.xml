@@ -49,4 +49,6 @@
         <param name="locationCurve">Autodesk.Revit.DB.LocationCurve</param>
         <param name="curve">Autodesk.Revit.DB.Curve</param> 
     </member> 
+    
+    <!-- -->
 </doc>
