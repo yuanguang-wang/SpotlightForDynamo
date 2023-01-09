@@ -13,11 +13,6 @@ namespace Spotlight.Element
             return wall.CurtainGrid;
         }
 
-        /// <summary>
-        /// Get the Location Class as Location Curve for DB.Wall
-        /// </summary>
-        /// <param name="wall">DB.Wall</param>
-        /// <returns name="locationCurve">Location Curve of the wall</returns>
         [NodeCategory("Actions")]
         public static ADDB.LocationCurve LocationCurve(ADDB.Wall wall)
         {
@@ -30,5 +25,12 @@ namespace Spotlight.Element
         {
             return wall.CanBeHidden(view);
         }
+
+        [NodeCategory("Query")]
+        public static bool CanBeLocked(ADDB.Wall wall)
+        {
+            return wall.CanBeLocked();
+        }
+        
     }
 }

@@ -1,1 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Spotlight.Element</name>
+    </assembly>
+    
+    <!-- Wall Class -->
+    
+    <member name="Spotlight.Element.Wall.LocationCurve">
+        <summary>
+            Get the [Location] Class as Location Curve of [Wall] Class
+        </summary>
+        <param name="wall">DB.Wall</param>
+        <returns name="LocationCurve">Location Curve of the Wall</returns>
+    </member>
+    <member name="Spotlight.Element.Wall.CurtainGrid">
+        <summary>
+            Get the [CurtainGrid] Class of [Wall] Class
+        </summary>
+        <param name="wall">DB.Wall</param>
+        <returns name="CurtainGrid">CurtainGrid of the Wall</returns>
+    </member>
+    
+    <!-- CurtainGrid Class -->
+    
+    <member name="Spotlight.Element.CurtainGrid.AddGridLine">
+        <summary>
+            Add a grid line to [CurtainGrid]
+        </summary>
+        <param name="curtainGrid">Autodesk.Revit.DB.CurtainGrid</param>
+        <param name="isUGridLine">System.Boolean</param>
+        <param name="xyz">Autodesk.Revit.DB.XYZ</param>
+        <param name="oneSegmentOnly">System.Boolean</param>
+    </member>
+    
+    <!-- Location Class -->
+    
+    <member name="Spotlight.Element.Location.GetCurve">
+        <summary>
+            Get the [Curve] Geometry of the [LocationCurve] Class
+        </summary>
+        <param name="locationCurve">Autodesk.Revit.DB.LocationCurve</param>
+        <returns name="Curve">Autodesk.Revit.DB.Curve</returns>
+    </member>
+    <member name="Spotlight.Element.Location.SetCurve">
+        <summary>
+            Set the [Curve] Geometry of the [LocationCurve] Class
+        </summary>
+        <param name="locationCurve">Autodesk.Revit.DB.LocationCurve</param>
+        <param name="curve">Autodesk.Revit.DB.Curve</param> 
+    </member> 
+</doc>

@@ -79,6 +79,9 @@
     <ItemGroup>
       <Content Include="IconConfig.xml" />
       <Content Include="Resources\logo.png" />
+      <Content Include="Spotlight.Element.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <Content Include="Spotlight.Element_DynamoCustomization.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>

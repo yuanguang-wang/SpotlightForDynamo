@@ -6,14 +6,15 @@ namespace Spotlight.Element
     public class Location
     {
         private Location() { }
-        /// <summary>
-        /// test3
-        /// </summary>
-        /// <param name="locationCurve"></param>
-        /// <returns></returns>
-        public static ADDB.Curve Curve(ADDB.LocationCurve locationCurve)
+
+        public static ADDB.Curve GetCurve(ADDB.LocationCurve locationCurve)
         {
             return locationCurve.Curve;
+        }
+
+        public static void SetCurve(ADDB.LocationCurve locationCurve, ADDB.Curve curve)
+        {
+            locationCurve.Curve = curve;
         }
     }
 }
