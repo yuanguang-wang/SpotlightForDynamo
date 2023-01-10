@@ -9,24 +9,24 @@ namespace Spotlight.Switch
     {
         private GeometrySwitch() { }
 
-        public static ADDB.XYZ DynamoPointToRevitXyz(DYDG.Point DynamoPoint)
+        public static ADDB.XYZ DynamoPointToRevitXyz(DYDG.Point dynamoPoint)
         {
-            return DynamoPoint.ToRevitType();
+            return dynamoPoint.ToRevitType();
         }
 
-        public static DYDG.Point RevitXyzToDynamoPoint(ADDB.XYZ RevitXyz)
+        public static DYDG.Point RevitXyzToDynamoPoint(ADDB.XYZ revitXyz)
         {
-            return RevitXyz.ToPoint();
+            return revitXyz.ToPoint();
         }
 
-        public static DYDG.Curve RevitCurveToDynamoCurve(ADDB.Curve RevitCurve)
+        public static DYDG.Curve RevitCurveToDynamoCurve(ADDB.Curve revitCurve)
         {
-            return RevitCurve.ToProtoType();
+            return revitCurve.ToProtoType();
         }
 
-        public static ADDB.Curve DynamoCurveToRevitCurve(DYDG.Curve DynamoCurve)
+        public static ADDB.Curve DynamoCurveToRevitCurve(DYDG.Curve dynamoCurve)
         {
-            return DynamoCurve.ToRevitType();
+            return dynamoCurve.ToRevitType();
         }
 
     }

@@ -1,3 +1,4 @@
+using Revit.GeometryConversion;
 using DYDG = Autodesk.DesignScript.Geometry;
 using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
@@ -19,5 +20,19 @@ namespace Spotlight.Switch
             ADDB.Wall revitWall = dynamoWall.InternalElement as ADDB.Wall;
             return revitWall;
         }
+
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static ADDB.ModelCurve DynamoModelCurveToRevitModelCurve(DYDB.ModelCurve dynamoModelCurve)
+        {
+            ADDB.ModelCurve revitModelCurve = dynamoModelCurve.InternalElement as ADDB.ModelCurve;
+            return revitModelCurve;
+        }
+
+        public static DYDG.Curve DynamoModelCurveToDesignScriptCurve(DYDB.ModelCurve dynamoModelCurve)
+        {
+            DYDG.Curve designScriptCurve = DynamoModelCurveToRevitModelCurve(dynamoModelCurve).GeometryCurve.ToProtoType();
+            return designScriptCurve;
+        }
+        
     }
 }
