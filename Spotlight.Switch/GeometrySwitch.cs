@@ -1,5 +1,5 @@
 ﻿using Revit.GeometryConversion;
-using DYDG = Autodesk.DesignScript.Geometry;
+using ADSG = Autodesk.DesignScript.Geometry;
 using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
 
@@ -9,24 +9,24 @@ namespace Spotlight.Switch
     {
         private GeometrySwitch() { }
 
-        public static ADDB.XYZ DynamoPointToRevitXyz(DYDG.Point dynamoPoint)
+        public static ADDB.XYZ Point_DSGtoRVT(ADSG.Point pointDSG)
         {
-            return dynamoPoint.ToRevitType();
+            return pointDSG.ToRevitType();
         }
 
-        public static DYDG.Point RevitXyzToDynamoPoint(ADDB.XYZ revitXyz)
+        public static ADSG.Point Point_RVTtoDSG(ADDB.XYZ pointRVT)
         {
-            return revitXyz.ToPoint();
+            return pointRVT.ToPoint();
         }
 
-        public static DYDG.Curve RevitCurveToDynamoCurve(ADDB.Curve revitCurve)
+        public static ADSG.Curve Curve_RVTtoDSG(ADDB.Curve curveRVT)
         {
-            return revitCurve.ToProtoType();
+            return curveRVT.ToProtoType();
         }
 
-        public static ADDB.Curve DynamoCurveToRevitCurve(DYDG.Curve dynamoCurve)
+        public static ADDB.Curve Curve_DSGtoRVT(ADSG.Curve curveDSG)
         {
-            return dynamoCurve.ToRevitType();
+            return curveDSG.ToRevitType();
         }
 
     }

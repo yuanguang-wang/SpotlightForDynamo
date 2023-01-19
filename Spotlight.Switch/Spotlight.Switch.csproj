@@ -69,6 +69,7 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="Spotlight.Switch.xml" />
       <Content Include="Spotlight.Switch_DynamoCustomization.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>

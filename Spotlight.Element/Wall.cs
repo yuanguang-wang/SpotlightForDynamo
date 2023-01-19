@@ -31,6 +31,11 @@ namespace Spotlight.Element
         {
             return wall.CanBeLocked();
         }
-        
+
+        [NodeCategory("Query")]
+        public static double Height(ADDB.Wall wall)
+        {
+            return 5.0;
+        }
     }
 }
