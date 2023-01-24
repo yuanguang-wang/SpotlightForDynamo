@@ -13,6 +13,7 @@
         <param name="wall">DB.Wall</param>
         <returns name="LocationCurve">Location Curve of the Wall</returns>
     </member>
+    
     <member name="Spotlight.Element.Wall.CurtainGrid">
         <summary>
             Get the [CurtainGrid] Class of [Wall] Class
@@ -42,6 +43,7 @@
         <param name="locationCurve">Autodesk.Revit.DB.LocationCurve</param>
         <returns name="Curve">Autodesk.Revit.DB.Curve</returns>
     </member>
+    
     <member name="Spotlight.Element.Location.SetCurve">
         <summary>
             Set the [Curve] Geometry of the [LocationCurve] Class

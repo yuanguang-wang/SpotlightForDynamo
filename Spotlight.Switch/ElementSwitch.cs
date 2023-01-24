@@ -9,28 +9,27 @@ namespace Spotlight.Switch
     {
         private ElementSwitch() { }
         
-        /// <summary>
-        /// Switch Dynamo wall (Revit.Elements.Wall to Autodesk.Revit.DB.Wall)
-        /// </summary>
-        /// <param name="dynamoWall">Dynamo Wall</param>
-        /// <returns name="revitWall">Revit Wall</returns>
-        /// <search>dynamo wall to revit wall</search>
-        public static ADDB.Wall DynamoWallToRevitWall(DYDB.Wall dynamoWall)
+        public static ADDB.Wall DYN__Wall__RVT(DYDB.Wall wall_DYN)
         {
-            ADDB.Wall revitWall = dynamoWall.InternalElement as ADDB.Wall;
+            ADDB.Wall revitWall = wall_DYN.InternalElement as ADDB.Wall;
             return revitWall;
         }
 
-        // ReSharper disable once MemberCanBePrivate.Global
-        public static ADDB.ModelCurve DynamoModelCurveToRevitModelCurve(DYDB.ModelCurve dynamoModelCurve)
+        public static DYDB.Wall RVT__Wall__DYN(ADDB.Wall wall_RVT)
         {
-            ADDB.ModelCurve revitModelCurve = dynamoModelCurve.InternalElement as ADDB.ModelCurve;
+            return DYDB.ElementWrapper.Wrap(wall_RVT,true);
+        }
+
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static ADDB.ModelCurve DYN__ModelCurve__RVT(DYDB.ModelCurve modelCurve_DYN)
+        {
+            ADDB.ModelCurve revitModelCurve = modelCurve_DYN.InternalElement as ADDB.ModelCurve;
             return revitModelCurve;
         }
 
-        public static DYDG.Curve DynamoModelCurveToDesignScriptCurve(DYDB.ModelCurve dynamoModelCurve)
+        public static DYDG.Curve DYN__ModelCurve__DSG(DYDB.ModelCurve modelCurve_DYN)
         {
-            DYDG.Curve designScriptCurve = DynamoModelCurveToRevitModelCurve(dynamoModelCurve).GeometryCurve.ToProtoType();
+            DYDG.Curve designScriptCurve = DYN__ModelCurve__RVT(modelCurve_DYN).GeometryCurve.ToProtoType();
             return designScriptCurve;
         }
         

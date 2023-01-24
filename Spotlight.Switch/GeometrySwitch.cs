@@ -9,24 +9,24 @@ namespace Spotlight.Switch
     {
         private GeometrySwitch() { }
 
-        public static ADDB.XYZ Point_DSGtoRVT(ADSG.Point pointDSG)
+        public static ADDB.XYZ DSG__Point__RVT(ADSG.Point point_DSG)
         {
-            return pointDSG.ToRevitType();
+            return point_DSG.ToRevitType();
         }
 
-        public static ADSG.Point Point_RVTtoDSG(ADDB.XYZ pointRVT)
+        public static ADSG.Point RVT__Point__DSG(ADDB.XYZ xyz_RVT)
         {
-            return pointRVT.ToPoint();
+            return xyz_RVT.ToPoint();
         }
 
-        public static ADSG.Curve Curve_RVTtoDSG(ADDB.Curve curveRVT)
+        public static ADSG.Curve RVT__Curve__DSG(ADDB.Curve curve_RVT)
         {
-            return curveRVT.ToProtoType();
+            return curve_RVT.ToProtoType();
         }
 
-        public static ADDB.Curve Curve_DSGtoRVT(ADSG.Curve curveDSG)
+        public static ADDB.Curve DSG__Curve__RVT(ADSG.Curve curve_DSG)
         {
-            return curveDSG.ToRevitType();
+            return curve_DSG.ToRevitType();
         }
 
     }
