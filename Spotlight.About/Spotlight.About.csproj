@@ -4,13 +4,14 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{E667CF27-B2FD-424A-8803-E334A77C61B5}</ProjectGuid>
+        <ProjectGuid>{FEE88772-79AE-41A2-A705-819442755C68}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Spotlight.Switch</RootNamespace>
-        <AssemblyName>Spotlight.Switch</AssemblyName>
+        <RootNamespace>Spotlight.About</RootNamespace>
+        <AssemblyName>Spotlight.About</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
+        <UseWpf>true</UseWpf>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,53 +33,49 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="CoreNodeModels">
+          <HintPath>..\..\dll\CoreNodeModels.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="CoreNodeModelsWpf">
+          <HintPath>..\..\dll\CoreNodeModelsWpf.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
         <Reference Include="DynamoCore">
           <HintPath>..\..\dll\DynamoCore.dll</HintPath>
           <Private>False</Private>
         </Reference>
-        <Reference Include="DynamoServices, Version=2.12.0.5650, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.2.12.0.5650\lib\net48\DynamoServices.dll</HintPath>
+        <Reference Include="DynamoCoreWpf">
+          <HintPath>..\..\dll\DynamoCoreWpf.dll</HintPath>
           <Private>False</Private>
         </Reference>
-        <Reference Include="DynamoUnits, Version=2.12.0.5650, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.12.0.5650\lib\net48\DynamoUnits.dll</HintPath>
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+          <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
           <Private>False</Private>
         </Reference>
-        <Reference Include="mscorlib" />
-        <Reference Include="ProtoGeometry, Version=2.12.0.5475, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.12.0.5650\lib\net48\ProtoGeometry.dll</HintPath>
+        <Reference Include="PresentationCore">
+          <HintPath>..\..\dll\PresentationCore.dll</HintPath>
           <Private>False</Private>
         </Reference>
-        <Reference Include="RevitAPI">
-          <HintPath>..\..\dll\RevitAPI.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="RevitNodes">
-          <HintPath>..\..\dll\RevitNodes.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="RevitServices">
-          <HintPath>..\..\dll\RevitServices.dll</HintPath>
+        <Reference Include="PresentationFramework">
+          <HintPath>..\..\dll\PresentationFramework.dll</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
-        <Reference Include="System.Xaml" />
+        <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
         <Reference Include="WindowsBase" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="ElementSwitch.cs" />
-        <Compile Include="GeometrySwitch.cs" />
+        <Compile Include="Abbreviation.cs" />
+        <Compile Include="AbbreviationUI.xaml.cs">
+          <DependentUpon>AbbreviationUI.xaml</DependentUpon>
+        </Compile>
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Content Include="Spotlight.Switch.xml">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
-      <Content Include="Spotlight.Switch_DynamoCustomization.xml">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
+      <Page Include="AbbreviationUI.xaml" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
@@ -98,5 +95,6 @@
         <MakeDir Directories="/Volumes/Spotlight/dyf" />
         <MakeDir Directories="/Volumes/Spotlight/extra" />
     </Target>
+
 
 </Project>
