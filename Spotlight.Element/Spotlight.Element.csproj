@@ -67,6 +67,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="CurtainGrid.cs" />
+        <Compile Include="Element.cs" />
         <Compile Include="Location.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Resources\SpotlightElementImages.Designer.cs">

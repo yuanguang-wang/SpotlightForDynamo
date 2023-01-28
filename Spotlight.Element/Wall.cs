@@ -20,22 +20,11 @@ namespace Spotlight.Element
             return locationCurve;
         }
 
-        [NodeCategory("Query")]
-        public static bool CanBeHidden(ADDB.Wall wall, ADDB.View view)
+        [NodeCategory("Actions")]
+        public static void Flip(ADDB.Wall wall)
         {
-            return wall.CanBeHidden(view);
+            wall.Flip();
         }
-
-        [NodeCategory("Query")]
-        public static bool CanBeLocked(ADDB.Wall wall)
-        {
-            return wall.CanBeLocked();
-        }
-
-        [NodeCategory("Query")]
-        public static double Height(ADDB.Wall wall)
-        {
-            return 5.0;
-        }
+        
     }
 }
