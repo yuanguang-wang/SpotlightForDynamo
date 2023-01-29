@@ -17,7 +17,7 @@ namespace Spotlight.Element
             ADDB.CurtainGridLine curtainGridLine = curtainGrid.AddGridLine(isUGridLine, xyz, oneSegmentOnly);
             
             TransactionManager.Instance.TransactionTaskDone();
-
+            
             return curtainGridLine;
         }
     }

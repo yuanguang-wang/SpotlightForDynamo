@@ -32,6 +32,16 @@ namespace Spotlight.Switch
             DYDG.Curve designScriptCurve = DYN__ModelCurve__RVT(modelCurve_DYN).GeometryCurve.ToProtoType();
             return designScriptCurve;
         }
-        
+
+        public static ADDB.Parameter DYN__Parameter__RVT(DYDB.Parameter parameter_DYN)
+        {
+            return null;
+        }
+
+        public static DYDB.Parameter RVT__Parameter__DYN(ADDB.Parameter parameter_RVT)
+        {
+            return null;
+        }
+
     }
 }

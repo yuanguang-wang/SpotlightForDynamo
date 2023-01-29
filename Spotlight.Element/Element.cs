@@ -31,5 +31,7 @@ namespace Spotlight.Element
         {
             return element.CanDeleteSubelement(subElement);
         }
+        
+        
     }
 }
