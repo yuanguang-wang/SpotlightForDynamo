@@ -8,7 +8,7 @@ namespace Spotlight.Element
     {
         private Element() { }
 
-        [NodeCategory("Actions")]
+
         public static ADDB.Parameter LookupParameter(ADDB.Element element, string parameterName)
         {
             return element.LookupParameter(parameterName);

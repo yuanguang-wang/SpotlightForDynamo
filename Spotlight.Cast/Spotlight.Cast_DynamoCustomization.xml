@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Spotlight.Cast</name>
+    </assembly>
+    <namespaces>
+        <namespace name="Spotlight.Cast">
+            <category>Spotlight.Cast</category>
+        </namespace>
+    </namespaces>
+</doc>

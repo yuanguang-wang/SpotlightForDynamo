@@ -8,6 +8,7 @@ namespace Spotlight.Element
     {
         private Wall() { }
         
+        [NodeCategory("Actions")] 
         public static ADDB.CurtainGrid CurtainGrid(ADDB.Wall wall)
         {
             return wall.CurtainGrid;
