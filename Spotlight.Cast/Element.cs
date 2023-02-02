@@ -1,16 +1,17 @@
-﻿using ADDB = Autodesk.Revit.DB;
+﻿using Revit.Elements;
+using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
 
 
 namespace Spotlight.Cast
 {
-    public class Element
+    public class ElementCast
     {
-        private Element() { }
+        private ElementCast() { }
 
-        public static ADDB.Element Wall__to__Element(ADDB.Wall wall)
+        public static ADDB.ElementId Wall__to__Element(ADDB.Wall wall)
         {
-            ADDB.Element element = wall;
+            ADDB.ElementId element = wall.Id;
             return element;
         }
     }

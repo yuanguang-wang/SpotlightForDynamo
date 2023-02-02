@@ -34,6 +34,68 @@
         <param name="oneSegmentOnly">System.Boolean</param>
     </member>
     
+    <member name="Spotlight.Element.CurtainGrid.ChangePanelType">
+        <summary>
+            Change the type of a curtain panel.
+        </summary>
+        <param name="curtainGrid">Autodesk.Revit.DB.CurtainGrid</param>
+        <param name="oldPanel">Candidates: Autodesk.Revit.DB.Panel/Wall</param>
+        <param name="newPanelType">Candidates: Autodesk.Revit.DB.PanelType/WallType</param>
+        <returns name="newPanel">Autodesk.Revit.DB.Panel</returns>
+    </member>
+
+    <member name="Spotlight.Element.CurtainGrid.GetMullionIds">
+        <summary>
+            Gets all ElementIds of the mullions of the curtain grid.
+        </summary>
+        <param name="curtainGrid">Autodesk.Revit.DB.CurtainGrid</param>
+        <returns name="mullionIds">Autodesk.Revit.DB.ElementId</returns>
+    </member>
+
+    <member name="Spotlight.Element.CurtainGrid.GetGridAngles">
+        <summary>
+            The angle for the grid line pattern of the curtain grid.
+        </summary>
+        <param name="curtainGrid">Autodesk.Revit.DB.CurtainGrid</param>
+        <returns name="grid1Angle">System.Double</returns>
+        <returns name="grid2Angle">System.Double</returns>
+    </member>
+
+    <member name="Spotlight.Element.CurtainGrid.GetGridOffsets">
+        <summary>
+            The offset for the grid line pattern of the curtain grid.
+        </summary>
+        <param name="curtainGrid">Autodesk.Revit.DB.CurtainGrid</param>
+        <returns name="grid1Offset">System.Double</returns>
+        <returns name="grid2Offset">System.Double</returns>
+    </member>
+    
+    <member name="Spotlight.Element.CurtainGrid.GetGridLineNumbers">
+        <summary>
+            Get the number of grid lines.
+        </summary>
+        <param name="curtainGrid">Autodesk.Revit.DB.CurtainGrid</param>
+        <returns name="gridULineNumber">System.Integer</returns>
+        <returns name="gridVLineNumber">System.Integer</returns>
+    </member>
+
+    <member name="Spotlight.Element.CurtainGrid.GetPanelIds">
+        <summary>
+            Gets all ElementIds of the panels of the curtain grid.
+        </summary>
+        <param name="curtainGrid">Autodesk.Revit.DB.CurtainGrid</param>
+        <returns name="mullionIds">Autodesk.Revit.DB.ElementId</returns>
+    </member>
+
+    <member name="Spotlight.Element.CurtainGrid.GetGridLineIds">
+        <summary>
+            Gets all ElementIds of grid lines.
+        </summary>
+        <param name="curtainGrid">Autodesk.Revit.DB.CurtainGrid</param>
+        <returns name="gridULineIds">Autodesk.Revit.DB.ElementId</returns>
+        <returns name="gridVLineIds">Autodesk.Revit.DB.ElementId</returns>
+    </member>
+
     <!-- Location Class -->
     
     <member name="Spotlight.Element.Location.GetCurve">
