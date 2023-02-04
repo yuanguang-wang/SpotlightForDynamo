@@ -1,4 +1,6 @@
 using Dynamo.Graph.Nodes;
+using RevitServices.Persistence;
+
 using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
 
@@ -8,9 +10,12 @@ namespace Spotlight.Element
     {
         private Element() { }
 
-
-        public static ADDB.Parameter LookupParameter(ADDB.Element element, string parameterName)
+        private static ADDB.Document CurrentDoc => DocumentManager.Instance.CurrentDBDocument;
+        
+        [NodeCategory("Query")]
+        public static ADDB.Parameter LookupParameter(ADDB.ElementId elementId, string parameterName)
         {
+            ADDB.Element element = CurrentDoc.GetElement(elementId);
             return element.LookupParameter(parameterName);
         }
         
@@ -31,7 +36,7 @@ namespace Spotlight.Element
         {
             return element.CanDeleteSubelement(subElement);
         }
-        
+
         
     }
 }

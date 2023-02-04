@@ -39,20 +39,41 @@ namespace Spotlight.Element
             return parameter.AsValueString();
         }
 
-        [NodeCategory("Actions")]
-        public static void SetNewValue(ADDB.Parameter parameter, double newValue)
+        [NodeCategory("Query")]
+        public static int? AsValueInteger(ADDB.Parameter parameter)
+        {
+            string valueString = parameter.AsValueString();
+            bool result = int.TryParse(valueString, out int valueInt);
+            if (result)
+            {
+                return valueInt;
+            }
+            return null;
+        }
+
+        [NodeCategory("Query")]
+        public static double? AsValueDouble(ADDB.Parameter parameter)
+        {
+            string valueString = parameter.AsValueString();
+            bool result = double.TryParse(valueString, out double valueDouble);
+            if (result)
+            {
+                return valueDouble;
+            }
+            return null;
+        }
+
+        public static void SetNewValue(double newValue, ADDB.Parameter parameter)
         {
             parameter.Set(newValue);
         }
         
-        [NodeCategory("Actions")]
-        public static void SetNewValue(ADDB.Parameter parameter, int newValue)
+        public static void SetNewValue(int newValue, ADDB.Parameter parameter)
         {
             parameter.Set(newValue);
         }
         
-        [NodeCategory("Actions")]
-        public static void SetNewValue(ADDB.Parameter parameter, string newValue)
+        public static void SetNewValue(string newValue, ADDB.Parameter parameter)
         {
             parameter.Set(newValue);
         }        
