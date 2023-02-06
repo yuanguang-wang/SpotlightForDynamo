@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Spotlight.Revit</name>
+    </assembly>
+    <namespaces>
+        <namespace name="Spotlight.Revit">
+            <category>Spotlight.Revit</category>
+        </namespace>
+    </namespaces>
+</doc>

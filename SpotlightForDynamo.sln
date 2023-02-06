@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.About", "Spotligh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.Cast", "Spotlight.Cast\Spotlight.Cast.csproj", "{F822902C-72B3-4A03-BD71-11A64BE39187}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.Revit", "Spotlight.Revit\Spotlight.Revit.csproj", "{3988D8B8-A80F-4BA2-8A4B-A6947A00B8FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{F822902C-72B3-4A03-BD71-11A64BE39187}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F822902C-72B3-4A03-BD71-11A64BE39187}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F822902C-72B3-4A03-BD71-11A64BE39187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3988D8B8-A80F-4BA2-8A4B-A6947A00B8FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3988D8B8-A80F-4BA2-8A4B-A6947A00B8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3988D8B8-A80F-4BA2-8A4B-A6947A00B8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3988D8B8-A80F-4BA2-8A4B-A6947A00B8FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
