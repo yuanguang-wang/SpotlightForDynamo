@@ -12,7 +12,14 @@ namespace Spotlight.Revit
     {
         private Document() { }
         private static ADDB.Document CurrentDoc => DocumentManager.Instance.CurrentDBDocument;
-
+        
+        [NodeCategory("Query")]
+        public static ADDB.Document GetDocument()
+        {
+            return CurrentDoc;
+        }
+        
+        [NodeCategory("Actions")]
         public static ICollection<ADDB.ElementId> Delete(ADDB.ElementId elementId) 
         {
             TransactionManager.Instance.EnsureInTransaction(CurrentDoc);
@@ -24,11 +31,7 @@ namespace Spotlight.Revit
             return deletedIdList;
         }
 
-        [NodeCategory("Query")]
-        public static ADDB.Document GetDocument()
-        {
-            return CurrentDoc;
-        }
+
 
 
 
