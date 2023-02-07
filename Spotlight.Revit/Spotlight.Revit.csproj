@@ -51,6 +51,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Document.cs" />
+        <Compile Include="ElementTransformUtility.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
@@ -59,12 +60,22 @@
       </Content>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
+
     <Target Name="AfterBuild">
+
+        <ItemGroup>
+            <Dlls Include="$(OutDir)*.dll" />
+            <Pdbs Include="$(OutDir)*.pdb" />
+            <Xmls Include="$(OutDir)*.xml" />
+            <Configs Include="$(OutDir)*.config" />
+        </ItemGroup>
+        <Copy SourceFiles="@(Dlls)" DestinationFolder="/Volumes/Spotlight/bin" />
+        <Copy SourceFiles="@(Pdbs)" DestinationFolder="/Volumes/Spotlight/bin" />
+        <Copy SourceFiles="@(Xmls)" DestinationFolder="/Volumes/Spotlight/bin" />
+        <Copy SourceFiles="@(Configs)" DestinationFolder="/Volumes/Spotlight/bin" />
+        <MakeDir Directories="/Volumes/Spotlight/dyf" />
+        <MakeDir Directories="/Volumes/Spotlight/extra" />
+
     </Target>
-    -->
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Dynamo.Graph.Nodes;
 
 using RevitServices.Persistence;
 using RevitServices.Transactions;
@@ -12,7 +13,7 @@ namespace Spotlight.Revit
         private Document() { }
         private static ADDB.Document CurrentDoc => DocumentManager.Instance.CurrentDBDocument;
 
-        public static ICollection<ADDB.ElementId> Delete(ADDB.ElementId elementId)
+        public static ICollection<ADDB.ElementId> Delete(ADDB.ElementId elementId) 
         {
             TransactionManager.Instance.EnsureInTransaction(CurrentDoc);
 
@@ -22,8 +23,14 @@ namespace Spotlight.Revit
 
             return deletedIdList;
         }
-        
-        
+
+        [NodeCategory("Query")]
+        public static ADDB.Document GetDocument()
+        {
+            return CurrentDoc;
+        }
+
+
 
     }
 }
