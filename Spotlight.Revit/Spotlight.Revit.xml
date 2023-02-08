@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Spotlight.Revit</name>
+    </assembly>
+    
+    <!-- ElementTransformUtility Class -->
+
+    <member name="Spotlight.Revit.ElementTransformUtility.CopyElement">
+        <summary>
+           Copy Element 
+        </summary>
+        <param name="doc">Autodesk.Revit.DB.Document</param>
+        <param name="elementId">Autodesk.Revit.DB.ElementId</param>
+        <param name="xyz">Autodesk.Revit.DB.XYZ</param>
+        <returns name="elementId">Autodesk.Revit.DB.ElementId</returns> 
+    </member>
+    
+
+</doc>
