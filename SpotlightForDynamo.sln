@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.Cast", "Spotlight
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.Revit", "Spotlight.Revit\Spotlight.Revit.csproj", "{3988D8B8-A80F-4BA2-8A4B-A6947A00B8FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.Selection", "Spotlight.Selection\Spotlight.Selection.csproj", "{CFA390AB-C0CC-4290-97BB-FF4BF3D77401}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{3988D8B8-A80F-4BA2-8A4B-A6947A00B8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3988D8B8-A80F-4BA2-8A4B-A6947A00B8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3988D8B8-A80F-4BA2-8A4B-A6947A00B8FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA390AB-C0CC-4290-97BB-FF4BF3D77401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA390AB-C0CC-4290-97BB-FF4BF3D77401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA390AB-C0CC-4290-97BB-FF4BF3D77401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA390AB-C0CC-4290-97BB-FF4BF3D77401}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

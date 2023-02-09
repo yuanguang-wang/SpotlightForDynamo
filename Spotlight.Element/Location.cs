@@ -1,5 +1,7 @@
+using Revit.GeometryConversion;
 using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
+using ADSG = Autodesk.DesignScript.Geometry;
 
 namespace Spotlight.Element
 {
@@ -7,9 +9,11 @@ namespace Spotlight.Element
     {
         private Location() { }
 
-        public static ADDB.Curve GetCurve(ADDB.LocationCurve locationCurve)
+        public static ADSG.Curve GetCurve(ADDB.LocationCurve locationCurve)
         {
-            return locationCurve.Curve;
+            ADDB.Curve curve = locationCurve.Curve;
+            return curve.ToProtoType(true);
+
         }
 
         public static void SetCurve(ADDB.LocationCurve locationCurve, ADDB.Curve curve)

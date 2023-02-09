@@ -20,23 +20,32 @@ namespace Spotlight.Element
         }
         
         [NodeCategory("Query")]
-        public static bool CanBeHidden(ADDB.Element element, ADDB.View view)
+        public static bool CanBeHidden(ADDB.ElementId elementId, ADDB.View view)
         {
+            ADDB.Element element = CurrentDoc.GetElement(elementId);
             return element.CanBeHidden(view);
         }
 
         [NodeCategory("Query")]
-        public static bool CanBeLocked(ADDB.Element element)
+        public static bool CanBeLocked(ADDB.ElementId elementId)
         {
+            ADDB.Element element = CurrentDoc.GetElement(elementId);
             return element.CanBeLocked();
         }
 
         [NodeCategory("Query")]
-        public static bool CanDeleteSubelement(ADDB.Element element, ADDB.Subelement subElement)
+        public static bool CanDeleteSubelement(ADDB.ElementId elementId, ADDB.Subelement subElement)
         {
+            ADDB.Element element = CurrentDoc.GetElement(elementId);
             return element.CanDeleteSubelement(subElement);
         }
 
-        
+        [NodeCategory("Query")]
+        public static System.Type GetType(ADDB.ElementId elementId)
+        {
+            return elementId.GetType();
+        }
+
+
     }
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Spotlight.Selection</name>
+    </assembly>
+    <namespaces>
+        <namespace name="Spotlight.Selection">
+            <category>Spotlight.Selection</category>
+        </namespace>
+    </namespaces>
+</doc>
