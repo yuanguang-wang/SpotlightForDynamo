@@ -34,9 +34,11 @@
     <ItemGroup>
         <Reference Include="DynamoCore">
           <HintPath>..\..\dll\DynamoCore.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="RevitAPI">
           <HintPath>..\..\dll\RevitAPI.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
@@ -44,6 +46,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="BuiltInCategory.cs" />
         <Compile Include="FilteredElementCollector.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

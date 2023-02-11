@@ -30,16 +30,22 @@ namespace Spotlight.Selection
             return filteredElementCollector;
         }
 
-        [NodeCategory("Actions")]
-        public static ADDB.FilteredElementCollector OfClass(ADDB.FilteredElementCollector filteredElementCollector, Type systemType)
-        {
-            return filteredElementCollector.OfClass(systemType);
-        }
-
         [NodeCategory("Query")]
-        public static ICollection<ADDB.ElementId> ToElementIds(ADDB.FilteredElementCollector filteredElementCollector)
+        public static ICollection<ADDB.ElementId> QueryByCategory(ADDB.Document doc, ADDB.BuiltInCategory category, bool typeFilter)
         {
+            ADDB.FilteredElementCollector filteredElementCollector = new ADDB.FilteredElementCollector(doc).OfCategory(category);
+            
+            if (typeFilter)
+            {
+                filteredElementCollector.WhereElementIsElementType();
+            }
+            else
+            {
+                filteredElementCollector.WhereElementIsNotElementType();
+            }
+            
             return filteredElementCollector.ToElementIds();
+
         }
     }
 }
