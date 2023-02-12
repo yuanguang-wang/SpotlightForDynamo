@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
 
@@ -31,7 +30,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Query")]
-        public static ICollection<ADDB.ElementId> QueryByCategory(ADDB.Document doc, ADDB.BuiltInCategory category, bool typeFilter)
+        public static ICollection<ADDB.ElementId> QueryByCategory(ADDB.Document doc, ADDB.BuiltInCategory category, bool typeFilter = false)
         {
             ADDB.FilteredElementCollector filteredElementCollector = new ADDB.FilteredElementCollector(doc).OfCategory(category);
             
@@ -45,7 +44,23 @@ namespace Spotlight.Selection
             }
             
             return filteredElementCollector.ToElementIds();
+        }
 
+        [NodeCategory("Query")]
+        public static ICollection<ADDB.ElementId> QueryByClass(ADDB.Document doc, System.Type classType, bool typeFilter = false)
+        {
+            ADDB.FilteredElementCollector filteredElementCollector = new ADDB.FilteredElementCollector(doc).OfClass(classType);
+            
+            if (typeFilter)
+            {
+                filteredElementCollector.WhereElementIsElementType();
+            }
+            else
+            {
+                filteredElementCollector.WhereElementIsNotElementType();
+            }
+            
+            return filteredElementCollector.ToElementIds(); 
         }
     }
 }

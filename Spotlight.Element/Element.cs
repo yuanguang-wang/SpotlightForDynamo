@@ -41,7 +41,7 @@ namespace Spotlight.Element
         }
 
         [NodeCategory("Query")]
-        public static System.Type GetType(ADDB.ElementId elementId)
+        public static System.Type GetClassType(ADDB.ElementId elementId)
         {
             return elementId.GetType();
         }
