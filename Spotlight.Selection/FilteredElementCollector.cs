@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Autodesk.DesignScript.Runtime;
 using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
 
@@ -9,10 +10,11 @@ namespace Spotlight.Selection
         private FilteredElementCollector() { }
 
         [NodeCategory("Create")]
-        public static ADDB.FilteredElementCollector CreateByDoc(ADDB.Document doc)
+        public static SpotlightElementCollector CreateByDoc(ADDB.Document doc)
         {
             ADDB.FilteredElementCollector filteredElementCollector = new ADDB.FilteredElementCollector(doc);
-            return filteredElementCollector;
+            SpotlightElementCollector spCollector = new SpotlightElementCollector(filteredElementCollector);
+            return spCollector;
         }
 
         [NodeCategory("Create")]
@@ -76,9 +78,11 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Actions")]
-        public static ADDB.FilteredElementCollector OfClass(ADDB.FilteredElementCollector filteredElementCollector, System.Type type)
+        public static SpotlightElementCollector OfClass(SpotlightElementCollector filteredElementCollector, System.Type type)
         {
-            return filteredElementCollector.OfClass(type);
+            ADDB.FilteredElementCollector newCollector = filteredElementCollector.DbCollector.OfClass(type);
+            SpotlightElementCollector newSpCollector = new SpotlightElementCollector(newCollector);
+            return newSpCollector;
         }
 
         [NodeCategory("Actions")]
@@ -86,5 +90,21 @@ namespace Spotlight.Selection
         {
             return filteredElementCollector.OfCategory(category);
         }
+
+        [NodeCategory("Query")]
+        public static ICollection<ADDB.ElementId> GetElementIds(SpotlightElementCollector spElementCollector)
+        {
+            return spElementCollector.DbCollector.ToElementIds();
+        }
+    }
+    
+    [IsVisibleInDynamoLibrary(false)]
+    public class SpotlightElementCollector
+    {
+        public SpotlightElementCollector(ADDB.FilteredElementCollector filteredElementCollector)
+        {
+            DbCollector = filteredElementCollector;
+        }
+        public ADDB.FilteredElementCollector DbCollector { get; }
     }
 }

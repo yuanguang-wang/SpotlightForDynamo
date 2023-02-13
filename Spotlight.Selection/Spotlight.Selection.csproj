@@ -36,6 +36,10 @@
           <HintPath>..\..\dll\DynamoCore.dll</HintPath>
           <Private>False</Private>
         </Reference>
+        <Reference Include="DynamoServices, Version=2.12.0.5650, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.2.12.0.5650\lib\net48\DynamoServices.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
         <Reference Include="RevitAPI">
           <HintPath>..\..\dll\RevitAPI.dll</HintPath>
           <Private>False</Private>
@@ -43,6 +47,7 @@
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
+        <Reference Include="System.Drawing" />
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
@@ -51,9 +56,13 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="images\logo.png" />
       <Content Include="Spotlight.Selection_DynamoCustomization.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     
