@@ -30,7 +30,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Query")]
-        public static ICollection<ADDB.ElementId> QueryByCategory(ADDB.Document doc, ADDB.BuiltInCategory category, bool typeFilter = false)
+        public static ICollection<ADDB.ElementId> QueryElementIdByCategory(ADDB.Document doc, ADDB.BuiltInCategory category, bool typeFilter = false)
         {
             ADDB.FilteredElementCollector filteredElementCollector = new ADDB.FilteredElementCollector(doc).OfCategory(category);
             
@@ -47,7 +47,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Query")]
-        public static ICollection<ADDB.ElementId> QueryByClass(ADDB.Document doc, System.Type classType, bool typeFilter = false)
+        public static ICollection<ADDB.ElementId> QueryElementIdByClass(ADDB.Document doc, System.Type classType, bool typeFilter = false)
         {
             ADDB.FilteredElementCollector filteredElementCollector = new ADDB.FilteredElementCollector(doc).OfClass(classType);
             
@@ -61,6 +61,30 @@ namespace Spotlight.Selection
             }
             
             return filteredElementCollector.ToElementIds(); 
+        }
+
+        [NodeCategory("Actions")]
+        public static ADDB.FilteredElementCollector LogicAnd(ADDB.FilteredElementCollector filteredElementCollector_1, ADDB.FilteredElementCollector filteredElementCollector_2)
+        {
+            return filteredElementCollector_1.IntersectWith(filteredElementCollector_2);
+        }
+        
+        [NodeCategory("Actions")]
+        public static ADDB.FilteredElementCollector LogicOr(ADDB.FilteredElementCollector filteredElementCollector_1, ADDB.FilteredElementCollector filteredElementCollector_2)
+        {
+            return filteredElementCollector_1.UnionWith(filteredElementCollector_2);
+        }
+
+        [NodeCategory("Actions")]
+        public static ADDB.FilteredElementCollector OfClass(ADDB.FilteredElementCollector filteredElementCollector, System.Type type)
+        {
+            return filteredElementCollector.OfClass(type);
+        }
+
+        [NodeCategory("Actions")]
+        public static ADDB.FilteredElementCollector OfCategory(ADDB.FilteredElementCollector filteredElementCollector, ADDB.BuiltInCategory category)
+        {
+            return filteredElementCollector.OfCategory(category);
         }
     }
 }
