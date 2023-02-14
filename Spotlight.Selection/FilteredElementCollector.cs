@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Autodesk.DesignScript.Runtime;
 using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
+using SP = Spotlight.Revit;
 
 namespace Spotlight.Selection
 {
@@ -10,25 +10,27 @@ namespace Spotlight.Selection
         private FilteredElementCollector() { }
 
         [NodeCategory("Create")]
-        public static SpotlightElementCollector CreateByDoc(ADDB.Document doc)
+        public static SP.FilteredElementCollector CreateByDoc(ADDB.Document doc)
         {
             ADDB.FilteredElementCollector filteredElementCollector = new ADDB.FilteredElementCollector(doc);
-            SpotlightElementCollector spCollector = new SpotlightElementCollector(filteredElementCollector);
+            SP.FilteredElementCollector spCollector = new SP.FilteredElementCollector(filteredElementCollector);
             return spCollector;
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilteredElementCollector CreateByView(ADDB.Document doc, ADDB.ElementId viewId)
+        public static SP.FilteredElementCollector CreateByView(ADDB.Document doc, ADDB.ElementId viewId)
         {
             ADDB.FilteredElementCollector filteredElementCollector = new ADDB.FilteredElementCollector(doc, viewId);
-            return filteredElementCollector;
+            SP.FilteredElementCollector spCollector = new SP.FilteredElementCollector(filteredElementCollector);
+            return spCollector;
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilteredElementCollector CreateByElementIds(ADDB.Document doc, ICollection<ADDB.ElementId> elementIds)
+        public static SP.FilteredElementCollector CreateByElementIds(ADDB.Document doc, ICollection<ADDB.ElementId> elementIds)
         {
             ADDB.FilteredElementCollector filteredElementCollector = new ADDB.FilteredElementCollector(doc, elementIds);
-            return filteredElementCollector;
+            SP.FilteredElementCollector spCollector = new SP.FilteredElementCollector(filteredElementCollector);
+            return spCollector;
         }
 
         [NodeCategory("Query")]
@@ -66,45 +68,63 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Actions")]
-        public static ADDB.FilteredElementCollector LogicAnd(ADDB.FilteredElementCollector filteredElementCollector_1, ADDB.FilteredElementCollector filteredElementCollector_2)
+        public static SP.FilteredElementCollector LogicAnd(SP.FilteredElementCollector filteredElementCollector_1, SP.FilteredElementCollector filteredElementCollector_2)
         {
-            return filteredElementCollector_1.IntersectWith(filteredElementCollector_2);
+            ADDB.FilteredElementCollector newCollector = filteredElementCollector_1.DbCollector.IntersectWith(filteredElementCollector_2.DbCollector);
+            SP.FilteredElementCollector newSpCollector = new SP.FilteredElementCollector(newCollector);
+            return newSpCollector;
         }
         
         [NodeCategory("Actions")]
-        public static ADDB.FilteredElementCollector LogicOr(ADDB.FilteredElementCollector filteredElementCollector_1, ADDB.FilteredElementCollector filteredElementCollector_2)
+        public static SP.FilteredElementCollector LogicOr(SP.FilteredElementCollector filteredElementCollector_1, SP.FilteredElementCollector filteredElementCollector_2)
         {
-            return filteredElementCollector_1.UnionWith(filteredElementCollector_2);
-        }
-
-        [NodeCategory("Actions")]
-        public static SpotlightElementCollector OfClass(SpotlightElementCollector filteredElementCollector, System.Type type)
-        {
-            ADDB.FilteredElementCollector newCollector = filteredElementCollector.DbCollector.OfClass(type);
-            SpotlightElementCollector newSpCollector = new SpotlightElementCollector(newCollector);
+            ADDB.FilteredElementCollector newCollector = filteredElementCollector_1.DbCollector.UnionWith(filteredElementCollector_2.DbCollector);
+            SP.FilteredElementCollector newSpCollector = new SP.FilteredElementCollector(newCollector);
             return newSpCollector;
         }
 
         [NodeCategory("Actions")]
-        public static ADDB.FilteredElementCollector OfCategory(ADDB.FilteredElementCollector filteredElementCollector, ADDB.BuiltInCategory category)
+        public static SP.FilteredElementCollector OfClass(SP.FilteredElementCollector filteredElementCollector, System.Type type)
         {
-            return filteredElementCollector.OfCategory(category);
+            ADDB.FilteredElementCollector newCollector = filteredElementCollector.DbCollector.OfClass(type);
+            SP.FilteredElementCollector newSpCollector = new SP.FilteredElementCollector(newCollector);
+            return newSpCollector;
+        }
+
+        [NodeCategory("Actions")]
+        public static SP.FilteredElementCollector OfCategory(SP.FilteredElementCollector filteredElementCollector, ADDB.BuiltInCategory category)
+        {
+            ADDB.FilteredElementCollector newCollector = filteredElementCollector.DbCollector.OfCategory(category);
+            SP.FilteredElementCollector newSpCollector = new SP.FilteredElementCollector(newCollector);
+            return newSpCollector;
         }
 
         [NodeCategory("Query")]
-        public static ICollection<ADDB.ElementId> GetElementIds(SpotlightElementCollector spElementCollector)
+        public static ICollection<ADDB.ElementId> GetElementIds(SP.FilteredElementCollector filteredElementCollector)
         {
-            return spElementCollector.DbCollector.ToElementIds();
+            return filteredElementCollector.DbCollector.ToElementIds();
+        }
+
+        [NodeCategory("Query")]
+        public static ICollection<ADDB.Element> GetElements(SP.FilteredElementCollector filteredElementCollector)
+        {
+            return filteredElementCollector.DbCollector.ToElements();
+        }
+
+        [NodeCategory("Query")]
+        public static int Count(SP.FilteredElementCollector filteredElementCollector)
+        {
+            return filteredElementCollector.DbCollector.GetElementCount();
+        }
+
+        [NodeCategory("Actions")]
+        public static SP.FilteredElementCollector RemoveElement(SP.FilteredElementCollector filteredElementCollector, ICollection<ADDB.ElementId> elementIds)
+        {
+            ADDB.FilteredElementCollector newCollector = filteredElementCollector.DbCollector.Excluding(elementIds);
+            SP.FilteredElementCollector newSpCollector = new SP.FilteredElementCollector(newCollector);
+            return newSpCollector;
         }
     }
     
-    [IsVisibleInDynamoLibrary(false)]
-    public class SpotlightElementCollector
-    {
-        public SpotlightElementCollector(ADDB.FilteredElementCollector filteredElementCollector)
-        {
-            DbCollector = filteredElementCollector;
-        }
-        public ADDB.FilteredElementCollector DbCollector { get; }
-    }
+
 }

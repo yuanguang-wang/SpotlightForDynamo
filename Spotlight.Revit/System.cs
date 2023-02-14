@@ -1,3 +1,4 @@
+using Autodesk.DesignScript.Runtime;
 using Dynamo.Graph.Nodes;
     
 using MS = System;
@@ -23,5 +24,16 @@ namespace Spotlight.Revit
             string concatName = nameSpace + "." + className + ", " + assemblyName;
             return MS.Type.GetType(concatName);
         }
+    }
+    
+    [IsVisibleInDynamoLibrary(false)]
+    public class FilteredElementCollector
+    {
+        public FilteredElementCollector(ADDB.FilteredElementCollector filteredElementCollector)
+        {
+            DbCollector = filteredElementCollector;
+        }
+
+        public ADDB.FilteredElementCollector DbCollector { get; }
     }
 }

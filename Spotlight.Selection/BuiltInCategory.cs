@@ -15,8 +15,6 @@ namespace Spotlight.Selection
         {
             return Enum.GetValues(typeof(ADDB.BuiltInCategory)).Cast<ADDB.BuiltInCategory>().ToList();
         }
-        
-        
 
         [NodeCategory("Query")]
         public static List<ADDB.BuiltInCategory> GetCategoryByKeyword(string keyword)
