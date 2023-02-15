@@ -1,13 +1,12 @@
-﻿
-using ADDB = Autodesk.Revit.DB;
+﻿using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
 
 
 namespace Spotlight.Cast
 {
-    public class ElementCast
+    public class SubElements
     {
-        private ElementCast() { }
+        private SubElements() { }
 
         ///////////////////////////////
         #region GetElementId Overloads
@@ -214,6 +213,16 @@ namespace Spotlight.Cast
         #endregion
         ///////////////////////////////
 
-        
+    }
+
+    public class SubElementFilters
+    {
+        private SubElementFilters() { }
+
+        public static ADDB.ElementFilter GetElementFilter(ADDB.ElementLevelFilter subElementFilter)
+        {
+            ADDB.ElementFilter filter = subElementFilter;
+            return filter;
+        }
     }
 }

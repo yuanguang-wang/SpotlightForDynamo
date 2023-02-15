@@ -124,6 +124,14 @@ namespace Spotlight.Selection
             SP.FilteredElementCollector newSpCollector = new SP.FilteredElementCollector(newCollector);
             return newSpCollector;
         }
+
+        [NodeCategory("Actions")]
+        public static SP.FilteredElementCollector WherePasses(SP.FilteredElementCollector filteredElementCollector, ADDB.ElementFilter elementFilter)
+        {
+            ADDB.FilteredElementCollector newFilter = filteredElementCollector.DbCollector.WherePasses(elementFilter);
+            SP.FilteredElementCollector newSpFilter = new SP.FilteredElementCollector(newFilter);
+            return newSpFilter;
+        }
     }
     
 
