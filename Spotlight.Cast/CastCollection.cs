@@ -1,5 +1,6 @@
 ﻿using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
+using SP = Spotlight.Revit;
 
 
 namespace Spotlight.Cast
@@ -7,9 +8,6 @@ namespace Spotlight.Cast
     public class SubElements
     {
         private SubElements() { }
-
-        ///////////////////////////////
-        #region GetElementId Overloads
 
         public static ADDB.ElementId GetElementId(ADDB.Wall element)
         {
@@ -209,9 +207,6 @@ namespace Spotlight.Cast
         {
             return element.Id;
         }
-        
-        #endregion
-        ///////////////////////////////
 
     }
 
@@ -219,10 +214,207 @@ namespace Spotlight.Cast
     {
         private SubElementFilters() { }
 
-        public static ADDB.ElementFilter GetElementFilter(ADDB.ElementLevelFilter subElementFilter)
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementLevelFilter subElementFilter)
         {
-            ADDB.ElementFilter filter = subElementFilter;
-            return filter;
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
         }
+        
+        public static SP.ElementFilter GetElementFilter(ADDB.Architecture.RoomFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        } 
+        
+        public static SP.ElementFilter GetElementFilter(ADDB.Architecture.RoomTagFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }  
+                
+        public static SP.ElementFilter GetElementFilter(ADDB.AreaFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }  
+                        
+        public static SP.ElementFilter GetElementFilter(ADDB.AreaTagFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }
+        
+        public static SP.ElementFilter GetElementFilter(ADDB.CurveElementFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }  
+                        
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementIntersectsFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }  
+                                
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementParameterFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }  
+                                        
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementPhaseStatusFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }  
+        
+        public static SP.ElementFilter GetElementFilter(ADDB.FamilyInstanceFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        } 
+        
+        public static SP.ElementFilter GetElementFilter(ADDB.BoundingBoxContainsPointFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        } 
+               
+        public static SP.ElementFilter GetElementFilter(ADDB.BoundingBoxIntersectsFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }  
+                       
+        public static SP.ElementFilter GetElementFilter(ADDB.BoundingBoxIsInsideFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }  
+                              
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementCategoryFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }   
+                                      
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementClassFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }   
+                                             
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementDesignOptionFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }    
+                                                     
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementIdSetFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }  
+                                                             
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementIsCurveDrivenFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }  
+                                                                     
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementIsElementTypeFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }
+                                                                             
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementMulticategoryFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }
+                                                                                     
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementMulticlassFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }
+        
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementOwnerViewFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }
+               
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementStructuralTypeFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }
+                       
+        public static SP.ElementFilter GetElementFilter(ADDB.ElementWorksetFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }
+                               
+        public static SP.ElementFilter GetElementFilter(ADDB.ExclusionFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }
+                                       
+        public static SP.ElementFilter GetElementFilter(ADDB.FamilySymbolFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }
+                                               
+        public static SP.ElementFilter GetElementFilter(ADDB.VisibleInViewFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        }
+                                                      
+        public static SP.ElementFilter GetElementFilter(ADDB.LogicalAndFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        } 
+                                                              
+        public static SP.ElementFilter GetElementFilter(ADDB.LogicalOrFilter subElementFilter)
+        {
+            ADDB.ElementFilter dbfilter = subElementFilter;
+            SP.ElementFilter spFilter = new SP.ElementFilter(dbfilter);
+            return spFilter;
+        } 
     }
 }

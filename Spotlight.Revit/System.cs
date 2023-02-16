@@ -36,4 +36,15 @@ namespace Spotlight.Revit
 
         public ADDB.FilteredElementCollector DbCollector { get; }
     }
+
+    [IsVisibleInDynamoLibrary(false)]
+    public class ElementFilter
+    {
+        public ADDB.ElementFilter DbElementFilter { get; }
+
+        public ElementFilter(ADDB.ElementFilter elementFilter)
+        {
+            DbElementFilter = elementFilter;
+        }
+    }
 }

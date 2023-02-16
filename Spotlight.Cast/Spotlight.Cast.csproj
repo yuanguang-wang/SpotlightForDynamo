@@ -57,6 +57,12 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Spotlight.Revit\Spotlight.Revit.csproj">
+        <Project>{3988d8b8-a80f-4ba2-8a4b-a6947a00b8fa}</Project>
+        <Name>Spotlight.Revit</Name>
+      </ProjectReference>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 
     <Target Name="AfterBuild">
