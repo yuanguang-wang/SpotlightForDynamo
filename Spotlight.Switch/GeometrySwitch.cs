@@ -26,7 +26,7 @@ namespace Spotlight.Switch
 
         public static ADDB.Curve DSG__Curve__RVT(ADSG.Curve curve_DSG)
         {
-            return curve_DSG.ToRevitType();
+            return curve_DSG.ToRevitType().Clone();
         }
 
     }

@@ -18,7 +18,13 @@ namespace Spotlight.Element
             ADDB.Element element = CurrentDoc.GetElement(elementId);
             return element.LookupParameter(parameterName);
         }
-        
+
+        [NodeCategory("Query")]
+        public static ADDB.Parameter LookupParameter(DYDB.Element dynamoElement, string parametername)
+        {
+            return dynamoElement.InternalElement.LookupParameter(parametername);
+        }
+
         [NodeCategory("Query")]
         public static bool CanBeHidden(ADDB.ElementId elementId, ADDB.View view)
         {

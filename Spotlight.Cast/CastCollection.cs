@@ -1,4 +1,5 @@
-﻿using ADDB = Autodesk.Revit.DB;
+﻿using Revit.Elements;
+using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
 using SP = Spotlight.Revit;
 
@@ -8,6 +9,13 @@ namespace Spotlight.Cast
     public class SubElements
     {
         private SubElements() { }
+
+        public static DYDB.Element GetDynamoElement(ADDB.Wall element)
+        {
+            return element.ToDSType(true);
+        }
+
+        #region GetElementId Overloads
 
         public static ADDB.ElementId GetElementId(ADDB.Wall element)
         {
@@ -207,6 +215,8 @@ namespace Spotlight.Cast
         {
             return element.Id;
         }
+        
+        #endregion
 
     }
 
