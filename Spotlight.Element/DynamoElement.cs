@@ -1,5 +1,4 @@
 using Dynamo.Graph.Nodes;
-using RevitServices.Persistence;
 
 using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
@@ -10,8 +9,6 @@ namespace Spotlight.Element
     {
         private DynamoElement() { }
 
-        private static ADDB.Document CurrentDoc => DocumentManager.Instance.CurrentDBDocument;
-
         [NodeCategory("Query")]
         public static ADDB.Parameter LookupParameter(DYDB.Element dynamoElement, string parameterName)
         {
@@ -19,30 +16,30 @@ namespace Spotlight.Element
         }
 
         [NodeCategory("Query")]
-        public static bool CanBeHidden(ADDB.ElementId elementId, ADDB.View view)
+        public static bool CanBeHidden(DYDB.Element dynamoElement, ADDB.View view)
         {
-            ADDB.Element element = CurrentDoc.GetElement(elementId);
+            ADDB.Element element = dynamoElement.InternalElement;
             return element.CanBeHidden(view);
         }
 
         [NodeCategory("Query")]
-        public static bool CanBeLocked(ADDB.ElementId elementId)
+        public static bool CanBeLocked(DYDB.Element dynamoElement)
         {
-            ADDB.Element element = CurrentDoc.GetElement(elementId);
+            ADDB.Element element = dynamoElement.InternalElement;
             return element.CanBeLocked();
         }
 
         [NodeCategory("Query")]
-        public static bool CanDeleteSubelement(ADDB.ElementId elementId, ADDB.Subelement subElement)
+        public static bool CanDeleteSubelement(DYDB.Element dynamoElement, ADDB.Subelement subElement)
         {
-            ADDB.Element element = CurrentDoc.GetElement(elementId);
+            ADDB.Element element = dynamoElement.InternalElement;
             return element.CanDeleteSubelement(subElement);
         }
 
         [NodeCategory("Query")]
-        public static System.Type GetClassType(ADDB.ElementId elementId)
+        public static System.Type GetClassType(DYDB.Element dynamoElement)
         {
-            return elementId.GetType();
+            return dynamoElement.InternalElement.GetType();
         }
 
 
