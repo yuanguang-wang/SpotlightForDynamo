@@ -6,23 +6,16 @@ using DYDB = Revit.Elements;
 
 namespace Spotlight.Element
 {
-    public class Element
+    public class DynamoElement
     {
-        private Element() { }
+        private DynamoElement() { }
 
         private static ADDB.Document CurrentDoc => DocumentManager.Instance.CurrentDBDocument;
-        
-        [NodeCategory("Query")]
-        public static ADDB.Parameter LookupParameter(ADDB.ElementId elementId, string parameterName)
-        {
-            ADDB.Element element = CurrentDoc.GetElement(elementId);
-            return element.LookupParameter(parameterName);
-        }
 
         [NodeCategory("Query")]
-        public static ADDB.Parameter LookupParameter(DYDB.Element dynamoElement, string parametername)
+        public static ADDB.Parameter LookupParameter(DYDB.Element dynamoElement, string parameterName)
         {
-            return dynamoElement.InternalElement.LookupParameter(parametername);
+            return dynamoElement.InternalElement.LookupParameter(parameterName);
         }
 
         [NodeCategory("Query")]

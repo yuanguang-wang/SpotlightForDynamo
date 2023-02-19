@@ -10,10 +10,6 @@ namespace Spotlight.Cast
     {
         private SubElements() { }
 
-        public static DYDB.Element GetDynamoElement(ADDB.Wall element)
-        {
-            return element.ToDSType(true);
-        }
 
         #region GetElementId Overloads
 
@@ -22,6 +18,11 @@ namespace Spotlight.Cast
             return element.Id;
         }
 
+        public static DYDB.Element GetDynamoElement(ADDB.Wall element)
+        {
+            return element.ToDSType(true);
+        }
+        
         public static ADDB.ElementId GetElementId(ADDB.Mullion element)
         {
             return element.Id;
