@@ -55,6 +55,7 @@
         <Compile Include="Filter.cs" />
         <Compile Include="FilteredElementCollector.cs" />
         <Compile Include="FilterRule.cs" />
+        <Compile Include="FilterRuleParameter.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
