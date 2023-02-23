@@ -11,7 +11,28 @@ namespace Spotlight.Element
         private ElementId() { }
 
         private static ADDB.Document CurrentDoc => DocumentManager.Instance.CurrentDBDocument;
-        
+
+        [NodeCategory("Create")]
+        public static ADDB.ElementId CreateByBuiltInCategory(ADDB.BuiltInCategory builtInCategory)
+        {
+            ADDB.ElementId elementId = new ADDB.ElementId(builtInCategory);
+            return elementId;
+        }
+
+        [NodeCategory("Create")]
+        public static ADDB.ElementId CreateByInteger(int integer)
+        {
+            ADDB.ElementId elementId = new ADDB.ElementId(integer);
+            return elementId;
+        }
+
+        [NodeCategory("Create")]
+        public static ADDB.ElementId CreateByBuiltInParameter(ADDB.BuiltInParameter builtInParameter)
+        {
+            ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
+            return elementId;
+        }
+
         [NodeCategory("Query")]
         public static ADDB.Parameter LookupParameter(ADDB.ElementId elementId, string parameterName)
         {
