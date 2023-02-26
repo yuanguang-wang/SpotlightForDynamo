@@ -21,5 +21,12 @@ namespace Spotlight.Selection
             ADDB.ElementLevelFilter filter = new ADDB.ElementLevelFilter(levelId, invert);
             return filter;
         }
+
+        [NodeCategory("Create")]
+        public static ADDB.ElementParameterFilter ElementParameterFilter(ADDB.FilterRule filterRule)
+        {
+            ADDB.ElementParameterFilter elementParameterFilter = new ADDB.ElementParameterFilter(filterRule);
+            return elementParameterFilter;
+        }
     }
 }
