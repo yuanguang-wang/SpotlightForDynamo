@@ -53,7 +53,7 @@
     <ItemGroup>
         <Compile Include="BuiltInCategory.cs" />
         <Compile Include="BuiltInParameter.cs" />
-        <Compile Include="Filter.cs" />
+        <Compile Include="ElementFilter.cs" />
         <Compile Include="FilteredElementCollector.cs" />
         <Compile Include="FilterRule.cs" />
         <Compile Include="FilterRuleParameter.cs" />
