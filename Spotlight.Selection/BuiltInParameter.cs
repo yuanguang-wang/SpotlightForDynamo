@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Dynamo.Graph.Nodes;
+using Spotlight.Revit;
 using ADDB = Autodesk.Revit.DB;
 
 namespace Spotlight.Selection
@@ -21,17 +22,39 @@ namespace Spotlight.Selection
         {
             List<ADDB.BuiltInParameter> enumTypeList = Enum.GetValues(typeof(ADDB.BuiltInParameter)).Cast<ADDB.BuiltInParameter>().ToList();
             List<string> enumNameList = Enum.GetNames(typeof(ADDB.BuiltInParameter)).ToList();
+            IEnumerable<string> enumDesList = from enumType in enumTypeList select enumType.ToDescription();
 
-            Dictionary<string, ADDB.BuiltInParameter> paramDic = new Dictionary<string, ADDB.BuiltInParameter>();
+            List<int> targetNameIndex = new List<int>();
+            List<int> targetDesIndex = new List<int>();
+
+            string upperKeyword = keyword.ToUpper();
 
             int i = 0;
             foreach (string name in enumNameList)
             {
-                paramDic.Add(name, enumTypeList[i]);
+                if (name.Contains(keyword))
+                {
+                   targetNameIndex.Add(i); 
+                }
+
                 i++;
             }
 
-            return (from pair in paramDic where pair.Key.Contains(keyword) select pair.Value).ToList();
+            int j = 0;
+            foreach (string name in enumDesList)
+            {
+                if (name.Contains(keyword))
+                {
+                    targetDesIndex.Add(j);
+                }
+
+                j++;
+            }
+
+            List<int> targetIndex = targetNameIndex.Union(targetDesIndex).ToList();
+
+            return targetIndex.Select(index => enumTypeList[index]).ToList();
+            
         }
     }
 }

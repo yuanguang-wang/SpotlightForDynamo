@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using Autodesk.DesignScript.Runtime;
 using Dynamo.Graph.Nodes;
     
@@ -47,4 +50,21 @@ namespace Spotlight.Revit
             DbElementFilter = elementFilter;
         }
     }
+
+    [IsVisibleInDynamoLibrary(false)]
+    public static class EnumDescriptionExtension
+    {
+        public static string ToDescription(this MS.Enum value)
+        {
+            FieldInfo field = value.GetType().GetField(value.ToString());
+            DescriptionAttribute[] desAttribute = field.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
+
+            if (desAttribute != null && desAttribute.Any())
+            {
+                return desAttribute.First().Description;
+            }
+            return string.Empty;
+        }
+    }
+
 }
