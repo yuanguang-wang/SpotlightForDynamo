@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Autodesk.DesignScript.Runtime;
 using Dynamo.Graph.Nodes;
 using Spotlight.Revit;
 using ADDB = Autodesk.Revit.DB;
@@ -18,11 +19,14 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Query")]
-        public static List<ADDB.BuiltInParameter> GetParameterByKeyword(string keyword)
+        [MultiReturn(new [] {"parameter", "description"})]
+        public static Dictionary<string, object> GetParameterByKeyword(string keyword)
         {
+            Dictionary<string, object> output = new Dictionary<string, object>();
+
             List<ADDB.BuiltInParameter> enumTypeList = Enum.GetValues(typeof(ADDB.BuiltInParameter)).Cast<ADDB.BuiltInParameter>().ToList();
             List<string> enumNameList = Enum.GetNames(typeof(ADDB.BuiltInParameter)).ToList();
-            IEnumerable<string> enumDesList = from enumType in enumTypeList select enumType.ToDescription();
+            List<string> enumDesList = (List<string>)from enumType in enumTypeList select enumType.ToDescription();
 
             List<int> targetNameIndex = new List<int>();
             List<int> targetDesIndex = new List<int>();
@@ -52,9 +56,14 @@ namespace Spotlight.Selection
             }
 
             List<int> targetIndex = targetNameIndex.Union(targetDesIndex).ToList();
-
-            return targetIndex.Select(index => enumTypeList[index]).ToList();
+            List<ADDB.BuiltInParameter> targetParam = targetIndex.Select(index => enumTypeList[index]).ToList();
+            List<string> targetDes = targetIndex.Select(index => enumDesList[index]).ToList();
             
+            output.Add("parameter", targetParam);
+            output.Add("description", targetDes);
+
+            return output;
+
         }
     }
 }
