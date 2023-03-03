@@ -26,7 +26,8 @@ namespace Spotlight.Selection
 
             List<ADDB.BuiltInParameter> enumTypeList = Enum.GetValues(typeof(ADDB.BuiltInParameter)).Cast<ADDB.BuiltInParameter>().ToList();
             List<string> enumNameList = Enum.GetNames(typeof(ADDB.BuiltInParameter)).ToList();
-            List<string> enumDesList = (List<string>)from enumType in enumTypeList select enumType.ToDescription();
+            IEnumerable<string> enumDesIEnum = from enumType in enumTypeList select enumType.ToDescription();
+            List<string> enumDesList = enumDesIEnum.ToList();
 
             List<int> targetNameIndex = new List<int>();
             List<int> targetDesIndex = new List<int>();
