@@ -1,6 +1,9 @@
+using System.Collections.Generic;
 using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
 using SP = Spotlight.Revit;
+
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace Spotlight.Selection
 {
@@ -27,6 +30,20 @@ namespace Spotlight.Selection
         {
             ADDB.ElementParameterFilter elementParameterFilter = new ADDB.ElementParameterFilter(filterRule);
             return elementParameterFilter;
+        }
+
+        [NodeCategory("Create")]
+        public static ADDB.ElementParameterFilter ElementParameterFilter(IList<ADDB.FilterRule> filterRules)
+        {
+            ADDB.ElementParameterFilter elementParameterFilter = new ADDB.ElementParameterFilter(filterRules);
+            return elementParameterFilter;
+        }
+
+        [NodeCategory("Create")]
+        public static ADDB.ElementParameterFilter ElementParameterFilter(ADDB.FilterRule filterRule, bool inverted)
+        {
+            ADDB.ElementParameterFilter elementParameterFilter = new ADDB.ElementParameterFilter(filterRule, inverted);
+            return elementParameterFilter; 
         }
     }
 }
