@@ -21,7 +21,8 @@ namespace Spotlight.Element
         }
 
         [MultiReturn(new[]{"double","elementId","integer","string" })]
-        public static Dictionary<string, object> GetParameterValue(ADDB.BuiltInParameter builtInParameter, DYDB.Element dynamoElement)
+        [NodeCategory("Query")]
+        public static Dictionary<string, object> GetAllParameterValues(ADDB.BuiltInParameter builtInParameter, DYDB.Element dynamoElement)
         {
             Dictionary<string, object> output = new Dictionary<string, object>();
 
@@ -40,6 +41,7 @@ namespace Spotlight.Element
         }
         
         [MultiReturn(new[]{"double","elementId","integer","string" })]
+        [NodeCategory("Query")]
         public static Dictionary<string, object> IsValueSupported(ADDB.BuiltInParameter builtInParameter, DYDB.Element dynamoElement)
         {
             Dictionary<string, object> output = new Dictionary<string, object>();
@@ -56,6 +58,28 @@ namespace Spotlight.Element
             parameterValueProvider.Dispose();
 
             return output;
+        }
+
+        [NodeCategory("Query")]
+        public static double GetParameterDoubleValue(ADDB.BuiltInParameter builtInParameter, DYDB.Element dynamoElement)
+        {
+            ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
+            ADDB.ParameterValueProvider parameterValueProvider = new ADDB.ParameterValueProvider(elementId);
+            ADDB.Element element = dynamoElement.InternalElement;
+            double value = parameterValueProvider.GetDoubleValue(element);
+            parameterValueProvider.Dispose();
+            return value;
+        }
+
+        [NodeCategory("Query")]
+        public static int GetParameterIntegerValue(ADDB.BuiltInParameter builtInParameter, DYDB.Element dynamoElement)
+        {
+            ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
+            ADDB.ParameterValueProvider parameterValueProvider = new ADDB.ParameterValueProvider(elementId);
+            ADDB.Element element = dynamoElement.InternalElement;
+            int value = parameterValueProvider.GetIntegerValue(element);
+            parameterValueProvider.Dispose();
+            return value; 
         }
     }
         
