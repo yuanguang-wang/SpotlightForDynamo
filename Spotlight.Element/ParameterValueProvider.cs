@@ -43,7 +43,7 @@ namespace Spotlight.Element
                 : ADDB.ElementId.InvalidElementId;
             string strValue = parameterValueProvider.IsStringValueSupported(revitElement)
                 ? parameterValueProvider.GetStringValue(revitElement)
-                : string.Empty;
+                : "null";
 
             output.Add("double", doubleValue);
             output.Add("elementId", idValue);

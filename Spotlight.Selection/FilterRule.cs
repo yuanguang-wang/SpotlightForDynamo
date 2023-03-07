@@ -3,6 +3,7 @@ using System.Linq;
 using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
 
+
 namespace Spotlight.Selection
 {
     public class FilterRule
@@ -36,5 +37,20 @@ namespace Spotlight.Selection
             return filterCategoryRule.SetCategories(elementIds);
         }
 
+        [NodeCategory("Create")]
+        public static ADDB.FilterRule CreateFilterDoubleRule(ADDB.FilterableValueProvider valueProvider,
+            ADDB.FilterNumericRuleEvaluator filterNumericRuleEvaluator, double ruleValue, double tolerance)
+        {
+            ADDB.FilterRule filterRule= new ADDB.FilterDoubleRule(valueProvider, filterNumericRuleEvaluator, ruleValue, tolerance);
+            return filterRule;
+        }
+
+        [NodeCategory("Create")]
+        public static ADDB.FilterRule CreateFilterDoubleRule(ADDB.ParameterValueProvider valueProvider,
+            ADDB.FilterNumericRuleEvaluator filterNumericRuleEvaluator, double ruleValue, double tolerance)
+        {
+            ADDB.FilterRule filterRule= new ADDB.FilterDoubleRule(valueProvider, filterNumericRuleEvaluator, ruleValue, tolerance);
+            return filterRule;
+        }
     }
 }
