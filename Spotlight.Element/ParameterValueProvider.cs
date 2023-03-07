@@ -29,11 +29,26 @@ namespace Spotlight.Element
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.ParameterValueProvider parameterValueProvider = new ADDB.ParameterValueProvider(elementId);
             ADDB.Element revitElement= dynamoElement.InternalElement;
-            
-            output.Add("double", parameterValueProvider.GetDoubleValue(revitElement));
-            output.Add("elementId", parameterValueProvider.GetElementIdValue(revitElement));
-            output.Add("integer", parameterValueProvider.GetIntegerValue(revitElement));
-            output.Add("string", parameterValueProvider.GetStringValue(revitElement));
+
+            double? doubleValue = parameterValueProvider.IsDoubleValueSupported(revitElement)
+                ? (double?)parameterValueProvider.GetDoubleValue(revitElement)
+                : null;
+
+            int? intValue = parameterValueProvider.IsIntegerValueSupported(revitElement)
+                ? (int?)parameterValueProvider.GetIntegerValue(revitElement)
+                : null;
+
+            ADDB.ElementId idValue = parameterValueProvider.IsElementIdValueSupported(revitElement)
+                ? parameterValueProvider.GetElementIdValue(revitElement)
+                : ADDB.ElementId.InvalidElementId;
+            string strValue = parameterValueProvider.IsStringValueSupported(revitElement)
+                ? parameterValueProvider.GetStringValue(revitElement)
+                : string.Empty;
+
+            output.Add("double", doubleValue);
+            output.Add("elementId", idValue);
+            output.Add("integer", intValue);
+            output.Add("string", strValue);
             
             parameterValueProvider.Dispose();
 
@@ -60,27 +75,7 @@ namespace Spotlight.Element
             return output;
         }
 
-        [NodeCategory("Query")]
-        public static double GetParameterDoubleValue(ADDB.BuiltInParameter builtInParameter, DYDB.Element dynamoElement)
-        {
-            ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
-            ADDB.ParameterValueProvider parameterValueProvider = new ADDB.ParameterValueProvider(elementId);
-            ADDB.Element element = dynamoElement.InternalElement;
-            double value = parameterValueProvider.GetDoubleValue(element);
-            parameterValueProvider.Dispose();
-            return value;
-        }
-
-        [NodeCategory("Query")]
-        public static int GetParameterIntegerValue(ADDB.BuiltInParameter builtInParameter, DYDB.Element dynamoElement)
-        {
-            ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
-            ADDB.ParameterValueProvider parameterValueProvider = new ADDB.ParameterValueProvider(elementId);
-            ADDB.Element element = dynamoElement.InternalElement;
-            int value = parameterValueProvider.GetIntegerValue(element);
-            parameterValueProvider.Dispose();
-            return value; 
-        }
+        
     }
         
 }
