@@ -68,6 +68,7 @@
     <ItemGroup>
         <Compile Include="CurtainGrid.cs" />
         <Compile Include="DynamoElement.cs" />
+        <Compile Include="Element.cs" />
         <Compile Include="ElementId.cs" />
         <Compile Include="Level.cs" />
         <Compile Include="Location.cs" />

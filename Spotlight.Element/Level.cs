@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Autodesk.DesignScript.Runtime;
 using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
@@ -29,5 +31,26 @@ namespace Spotlight.Element
         {
             return level.GetLeader(datumEnds, view);
         }
+
+        [NodeCategory("Query")]
+        [MultiReturn(new []{"levelId", "offset"})]
+        public static Dictionary<string, object> GetNearestLevelId(ADDB.Document doc, double elevation)
+        {
+            Dictionary<string, object> output = new Dictionary<string, object>();
+
+            ADDB.ElementId elementId = ADDB.Level.GetNearestLevelId(doc, elevation, out double offset);
+            
+            output.Add("levelId", elementId);
+            output.Add("offset", offset);
+
+            return output;
+        }
+
+        [NodeCategory("Query")]
+        public static double GetProjectionElevation(ADDB.Level level)
+        {
+            return level.ProjectElevation;
+        }
+
     }
 }

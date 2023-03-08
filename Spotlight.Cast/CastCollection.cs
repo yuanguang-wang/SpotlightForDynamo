@@ -8,10 +8,7 @@ namespace Spotlight.Cast
 {
     public class SubElements
     {
-        private SubElements()
-        {
-        }
-
+        private SubElements() { }
 
         #region GetElementId Overloads
 
@@ -388,9 +385,7 @@ namespace Spotlight.Cast
 
     public class SubElementFilters
     {
-        private SubElementFilters()
-        {
-        }
+        private SubElementFilters() { }
 
         public static SP.ElementFilter GetElementFilter(ADDB.ElementLevelFilter subElementFilter)
         {
