@@ -69,6 +69,7 @@
         <Compile Include="CurtainGrid.cs" />
         <Compile Include="DynamoElement.cs" />
         <Compile Include="ElementId.cs" />
+        <Compile Include="Level.cs" />
         <Compile Include="Location.cs" />
         <Compile Include="Parameter.cs" />
         <Compile Include="ParameterValueProvider.cs" />
