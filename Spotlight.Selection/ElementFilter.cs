@@ -45,5 +45,6 @@ namespace Spotlight.Selection
             ADDB.ElementParameterFilter elementParameterFilter = new ADDB.ElementParameterFilter(filterRule, inverted);
             return elementParameterFilter; 
         }
+
     }
 }

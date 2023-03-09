@@ -6,7 +6,7 @@ using Dynamo.Graph.Nodes;
 using Spotlight.Revit;
 using ADDB = Autodesk.Revit.DB;
 
-namespace Spotlight.Selection
+namespace Spotlight.Enumerations
 {
     public class BuiltInParameter
     {

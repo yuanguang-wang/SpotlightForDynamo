@@ -4,7 +4,7 @@ using System.Linq;
 using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
 
-namespace Spotlight.Selection
+namespace Spotlight.Enumerations
 {
     public class BuiltInCategory
     {
