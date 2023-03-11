@@ -20,7 +20,7 @@ namespace Spotlight.Enumerations
 
         [NodeCategory("Query")]
         [MultiReturn(new [] {"parameter", "description"})]
-        public static Dictionary<string, object> GetParameterByKeyword(string keyword)
+        public static Dictionary<string, object> GetByKeyword(string keyword)
         {
             Dictionary<string, object> output = new Dictionary<string, object>();
 
@@ -32,7 +32,7 @@ namespace Spotlight.Enumerations
             List<int> targetNameIndex = new List<int>();
             List<int> targetDesIndex = new List<int>();
 
-            string upperKeyword = keyword.ToUpper();
+            //string upperKeyword = keyword.ToUpper();
 
             int i = 0;
             foreach (string name in enumNameList)

@@ -6,16 +6,16 @@ using ADDB = Autodesk.Revit.DB;
 
 namespace Spotlight.Enumerations
 {
-    public class BuiltInCategory
+    public class CurveElementType
     {
-        private BuiltInCategory() { }
-
+        private CurveElementType() { }
+        
         [NodeCategory("Query")]
-        public static List<ADDB.BuiltInCategory> GetAllCategories()
+        public static List<ADDB.CurveElementType> GetAllCurveElementTypes()
         {
-            return Enum.GetValues(typeof(ADDB.BuiltInCategory)).Cast<ADDB.BuiltInCategory>().ToList();
+            return Enum.GetValues(typeof(ADDB.CurveElementType)).Cast<ADDB.CurveElementType>().ToList();
         }
-
+        
         [NodeCategory("Query")]
         public static List<ADDB.BuiltInCategory> GetByKeyword(string keyword)
         {
@@ -41,6 +41,11 @@ namespace Spotlight.Enumerations
             }
 
             return filteredList;
+        }
+
+        public static List<T> GetWithKeyword<T>(string keyword)
+        {
+            return new List<T>();
         }
     }
 }
