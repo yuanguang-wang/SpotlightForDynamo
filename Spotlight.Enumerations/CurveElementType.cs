@@ -17,35 +17,26 @@ namespace Spotlight.Enumerations
         }
         
         [NodeCategory("Query")]
-        public static List<ADDB.BuiltInCategory> GetByKeyword(string keyword)
+        public static List<ADDB.CurveElementType> GetByKeyword(string keyword)
         {
-            List<ADDB.BuiltInCategory> enumTypeList = Enum.GetValues(typeof(ADDB.BuiltInCategory)).Cast<ADDB.BuiltInCategory>().ToList();
-            List<string> enumNameList = Enum.GetNames(typeof(ADDB.BuiltInCategory)).ToList();
+            return GetWithKeyword<ADDB.CurveElementType>(keyword);
+        }
 
-            Dictionary<string, ADDB.BuiltInCategory> categoryDic = new Dictionary<string, ADDB.BuiltInCategory>();
+        private static List<T> GetWithKeyword<T>(string keyword)
+        {
+            List<T> enumTypeList = Enum.GetValues(typeof(T)).Cast<T>().ToList();
+            List<string> enumNameList = Enum.GetNames(typeof(T)).ToList();
+
+            Dictionary<string, T> enumDic = new Dictionary<string, T>();
 
             int i = 0;
             foreach (string name in enumNameList)
             {
-                categoryDic.Add(name, enumTypeList[i]);
+                enumDic.Add(name,enumTypeList[i]);
                 i++;
             }
 
-            List<ADDB.BuiltInCategory> filteredList = new List<ADDB.BuiltInCategory>();
-            foreach (KeyValuePair<string, ADDB.BuiltInCategory> pair in categoryDic)
-            {
-                if (pair.Key.Contains(keyword))
-                {
-                    filteredList.Add(pair.Value);
-                }
-            }
-
-            return filteredList;
-        }
-
-        public static List<T> GetWithKeyword<T>(string keyword)
-        {
-            return new List<T>();
+            return (from pair in enumDic where pair.Key.Contains(keyword) select pair.Value).ToList();
         }
     }
 }
