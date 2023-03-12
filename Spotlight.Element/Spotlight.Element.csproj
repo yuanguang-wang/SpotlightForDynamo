@@ -81,6 +81,7 @@
           <DependentUpon>SpotlightElementImages.resx</DependentUpon>
         </Compile>
         <Compile Include="Wall.cs" />
+        <Compile Include="XYZ.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="IconConfig.xml" />

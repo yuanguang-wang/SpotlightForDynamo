@@ -7,9 +7,9 @@ using ADDB = Autodesk.Revit.DB;
 
 namespace Spotlight.Revit
 {
-    public class ElementTransformUtility
+    public class ElementTransformation
     {
-        private ElementTransformUtility() {}
+        private ElementTransformation() {}
 
         [NodeCategory("Create")]
         public static ICollection<ADDB.ElementId> CopyElement(ADDB.Document doc, ADDB.ElementId elementId, ADDB.XYZ xyz)

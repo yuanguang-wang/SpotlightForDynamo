@@ -54,11 +54,11 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="BuiltInEnumerations.cs" />
         <Compile Include="Document.cs" />
-        <Compile Include="ElementTransformUtility.cs" />
+        <Compile Include="ElementTransformation.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="System.cs" />
-        <Compile Include="XYZ.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="images\logo.png" />

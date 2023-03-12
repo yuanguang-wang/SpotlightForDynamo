@@ -1,9 +1,7 @@
-using System.Collections.Generic;
 using Dynamo.Graph.Nodes;
-    
 using ADDB = Autodesk.Revit.DB;
 
-namespace Spotlight.Revit
+namespace Spotlight.Element
 {
     public class Xyz
     {
