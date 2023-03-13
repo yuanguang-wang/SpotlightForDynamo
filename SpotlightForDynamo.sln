@@ -12,8 +12,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.Revit", "Spotligh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.Selection", "Spotlight.Selection\Spotlight.Selection.csproj", "{CFA390AB-C0CC-4290-97BB-FF4BF3D77401}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotlight.Enumerations", "Spotlight.Enumerations\Spotlight.Enumerations.csproj", "{C5C499D3-B577-42E6-A799-775A83602EB2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,9 +42,5 @@ Global
 		{CFA390AB-C0CC-4290-97BB-FF4BF3D77401}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFA390AB-C0CC-4290-97BB-FF4BF3D77401}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFA390AB-C0CC-4290-97BB-FF4BF3D77401}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C5C499D3-B577-42E6-A799-775A83602EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5C499D3-B577-42E6-A799-775A83602EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5C499D3-B577-42E6-A799-775A83602EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5C499D3-B577-42E6-A799-775A83602EB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
