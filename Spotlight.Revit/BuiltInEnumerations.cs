@@ -46,6 +46,17 @@ namespace Spotlight.Revit
             return GetByKeyword<ADDB.CurveElementType>(keyword);
         }
 
+        [NodeCategory("Query")]
+        public static List<ADDB.BuiltInCategory> BuiltInCategory(string keyword = "")
+        {
+            return GetByKeyword<ADDB.BuiltInCategory>(keyword);
+        }
+
+        [NodeCategory("Query")]
+        public static List<ADDB.BuiltInParameter> BuiltInParameter(string keyword = "")
+        {
+            return GetByKeyword<ADDB.BuiltInParameter>(keyword);
+        }
 
     }
 }
