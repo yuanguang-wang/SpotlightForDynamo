@@ -9,10 +9,12 @@ using ADDB = Autodesk.Revit.DB;
 
 namespace Spotlight.Revit
 {
-    public class System
+    // ReSharper disable once InconsistentNaming
+    public class dotnetSystem
     {
-        private System() { }
+        private dotnetSystem() { }
 
+        
         [NodeCategory("Query")]
         // ReSharper disable once InconsistentNaming
         public static MS.Type GetDBClassType(string className)
