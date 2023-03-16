@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Spotlight.ElementType</name>
+    </assembly>
+    <namespaces>
+        <namespace name="Spotlight.ElementType">
+            <category>Spotlight.ElementType</category>
+        </namespace>
+    </namespaces>
+</doc>

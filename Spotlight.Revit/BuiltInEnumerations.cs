@@ -58,5 +58,17 @@ namespace Spotlight.Revit
             return GetByKeyword<ADDB.BuiltInParameter>(keyword);
         }
 
+        [NodeCategory("Query")]
+        public static List<ADDB.WallFunction> WallFunctions(string keyword = "")
+        {
+            return GetByKeyword<ADDB.WallFunction>(keyword);
+        }
+
+        [NodeCategory("Query")]
+        public static List<ADDB.WallKind> WallKinds(string keyword = "")
+        {
+            return GetByKeyword<ADDB.WallKind>(keyword);
+        }
+
     }
 }
