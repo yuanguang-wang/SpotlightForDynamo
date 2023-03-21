@@ -1,22 +1,22 @@
 using System.Collections.Generic;
 using Autodesk.DesignScript.Runtime;
+using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
-using Dynamo.Graph.Nodes;
 
 // ReSharper disable MemberCanBePrivate.Global
 
-namespace Spotlight.Element
+namespace Spotlight.Selection
 {
-    public class ParameterValueProvider
+    public class FilterableValueProvider
     {
-        private ParameterValueProvider() { }
+        private FilterableValueProvider() { }
 
         [NodeCategory("Create")]
-        public static ADDB.ParameterValueProvider CreateParameterValueProvider(ADDB.BuiltInParameter builtInParameter)
+        public static ADDB.FilterableValueProvider ParameterValueProvider(ADDB.BuiltInParameter builtInParameter)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
-            ADDB.ParameterValueProvider parameterValueProvider = new ADDB.ParameterValueProvider(elementId);
+            ADDB.FilterableValueProvider parameterValueProvider = new ADDB.ParameterValueProvider(elementId);
             return parameterValueProvider;
         }
 

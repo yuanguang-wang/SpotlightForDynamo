@@ -73,7 +73,6 @@
         <Compile Include="Level.cs" />
         <Compile Include="Location.cs" />
         <Compile Include="Parameter.cs" />
-        <Compile Include="ParameterValueProvider.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Resources\SpotlightElementImages.Designer.cs">
           <DesignTime>True</DesignTime>
