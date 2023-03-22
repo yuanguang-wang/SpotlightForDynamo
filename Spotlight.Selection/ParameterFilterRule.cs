@@ -8,7 +8,7 @@ namespace Spotlight.Selection
         private ParameterFilterRule() { }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateContainsRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
+        public static ADDB.FilterRule StringContainsFilterRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateContainsRule(elementId, value, caseSensitive);
@@ -16,7 +16,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateBeginsWithRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
+        public static ADDB.FilterRule StringBeginsWithFilterRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateBeginsWithRule(elementId, value, caseSensitive);
@@ -24,7 +24,7 @@ namespace Spotlight.Selection
         }
         
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateEndsWithRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
+        public static ADDB.FilterRule StringEndsWithFilterRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateEndsWithRule(elementId, value, caseSensitive);
@@ -32,7 +32,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateEqualsRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
+        public static ADDB.FilterRule StringEqualsFilterRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateEqualsRule(elementId, value, caseSensitive);
@@ -40,7 +40,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateEqualsRule(ADDB.BuiltInParameter builtInParameter, int value)
+        public static ADDB.FilterRule IntegerEqualsFilterRule(ADDB.BuiltInParameter builtInParameter, int value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateEqualsRule(elementId, value);
@@ -48,7 +48,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateEqualsRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
+        public static ADDB.FilterRule DoubleEqualsFilterRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateEqualsRule(elementId, value, tolerance);
@@ -56,7 +56,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateEqualsRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
+        public static ADDB.FilterRule ElementIdEqualsFilterRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateEqualsRule(elementId, value);
@@ -64,7 +64,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateGreaterRule(ADDB.BuiltInParameter builtInParameter, int value)
+        public static ADDB.FilterRule IntegerGreaterFilterRule(ADDB.BuiltInParameter builtInParameter, int value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateGreaterRule(elementId, value);
@@ -72,7 +72,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateGreaterRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
+        public static ADDB.FilterRule DoubleGreaterFilterRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateGreaterRule(elementId, value, tolerance);
@@ -80,7 +80,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateGreaterRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
+        public static ADDB.FilterRule StringGreaterFilterRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateGreaterRule(elementId, value, caseSensitive);
@@ -88,7 +88,7 @@ namespace Spotlight.Selection
         }
         
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateGreaterRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
+        public static ADDB.FilterRule ElementIdGreaterFilterRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateGreaterRule(elementId, value);
@@ -96,7 +96,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateGreaterOrEqualRule(ADDB.BuiltInParameter builtInParameter, int value)
+        public static ADDB.FilterRule IntegerGreaterOrEqualFilterRule(ADDB.BuiltInParameter builtInParameter, int value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateGreaterOrEqualRule(elementId, value);
@@ -104,7 +104,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateGreaterOrEqualRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
+        public static ADDB.FilterRule IntegerGreaterOrEqualFilterRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateGreaterOrEqualRule(elementId, value, tolerance);
@@ -112,7 +112,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateGreaterOrEqualRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
+        public static ADDB.FilterRule StringGreaterOrEqualFilterRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateGreaterOrEqualRule(elementId, value, caseSensitive);
@@ -120,7 +120,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateGreaterOrEqualRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
+        public static ADDB.FilterRule ElementIdGreaterOrEqualFilterRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateGreaterOrEqualRule(elementId, value);
@@ -128,7 +128,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateLessRule(ADDB.BuiltInParameter builtInParameter, int value)
+        public static ADDB.FilterRule IntegerLessFilterRule(ADDB.BuiltInParameter builtInParameter, int value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateLessRule(elementId, value);
@@ -136,7 +136,7 @@ namespace Spotlight.Selection
         }
         
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateLessRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
+        public static ADDB.FilterRule DoubleLessFilterRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateLessRule(elementId, value, tolerance);
@@ -144,7 +144,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateLessRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
+        public static ADDB.FilterRule StringLessFilterRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateLessRule(elementId, value, caseSensitive);
@@ -152,7 +152,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateLessRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
+        public static ADDB.FilterRule ElementIdLessFilterRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateLessRule(elementId, value);
@@ -160,7 +160,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateLessOrEqualRule(ADDB.BuiltInParameter builtInParameter, int value)
+        public static ADDB.FilterRule IntegerLessOrEqualFilterRule(ADDB.BuiltInParameter builtInParameter, int value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateLessOrEqualRule(elementId, value);
@@ -168,7 +168,7 @@ namespace Spotlight.Selection
         }
         
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateLessOrEqualRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
+        public static ADDB.FilterRule DoubleLessOrEqualFilterRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateLessOrEqualRule(elementId, value, tolerance);
@@ -176,7 +176,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateLessOrEqualRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
+        public static ADDB.FilterRule StringLessOrEqualFilterRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateLessOrEqualRule(elementId, value, caseSensitive);
@@ -184,7 +184,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateLessOrEqualRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
+        public static ADDB.FilterRule ElementIdLessOrEqualFilterRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateLessOrEqualRule(elementId, value);
@@ -192,7 +192,7 @@ namespace Spotlight.Selection
         }
        
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateNotEqualsRule(ADDB.BuiltInParameter builtInParameter, int value)
+        public static ADDB.FilterRule IntegerNotEqualsFilterRule(ADDB.BuiltInParameter builtInParameter, int value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateNotEqualsRule(elementId, value);
@@ -200,7 +200,7 @@ namespace Spotlight.Selection
         }
         
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateNotEqualsRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
+        public static ADDB.FilterRule DoubleNotEqualsFilterRule(ADDB.BuiltInParameter builtInParameter, double value, double tolerance = 0.001)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateNotEqualsRule(elementId, value, tolerance);
@@ -208,7 +208,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateNotEqualsRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
+        public static ADDB.FilterRule StringNotEqualsFilterRule(ADDB.BuiltInParameter builtInParameter, string value, bool caseSensitive)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateNotEqualsRule(elementId, value, caseSensitive);
@@ -216,7 +216,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Create")]
-        public static ADDB.FilterRule CreateNotEqualsRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
+        public static ADDB.FilterRule ElementIdNotEqualsFilterRule(ADDB.BuiltInParameter builtInParameter, ADDB.ElementId value)
         {
             ADDB.ElementId elementId = new ADDB.ElementId(builtInParameter);
             ADDB.FilterRule filterRule = ADDB.ParameterFilterRuleFactory.CreateNotEqualsRule(elementId, value);
