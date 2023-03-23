@@ -60,6 +60,7 @@
         <Compile Include="FilterRule.cs" />
         <Compile Include="ParameterFilterRule.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="RuleType.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="images\logo.png" />
