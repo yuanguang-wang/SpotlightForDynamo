@@ -3,6 +3,7 @@ using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
 using SP = Spotlight.Revit;
 using DYDB = Revit.Elements;
+using MS = System;
 
 // ReSharper disable MemberCanBePrivate.Global
 
@@ -25,7 +26,7 @@ namespace Spotlight.Selection
         public static SP.ElementFilter ElementParameterFilter(IList<ADDB.FilterRule> filterRules, bool invert = false)
         {
             return new SP.ElementFilter(new ADDB.ElementParameterFilter(filterRules, invert));
-        }
+        } 
 
         [NodeCategory("Create")]
         public static SP.ElementFilter ElementLevelFilter(DYDB.Level level, bool invert = false)
@@ -95,5 +96,50 @@ namespace Spotlight.Selection
         
         // Element Quick Filter //
         /////////////////////////
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter BoundingBoxContainsPointFilter(ADDB.XYZ xyz, double tolerance = 0.00, bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.BoundingBoxContainsPointFilter(xyz, tolerance, invert));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter BoundingBoxIntersectsFilter(ADDB.Outline outline, double tolerance = 0.00, bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.BoundingBoxIntersectsFilter(outline, tolerance, invert));
+        }
+        
+        [NodeCategory("Create")]
+        public static SP.ElementFilter BoundingBoxIsInsideFilter(ADDB.Outline outline, double tolerance = 0.00, bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.BoundingBoxIsInsideFilter(outline, tolerance, invert));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter ElementCategoryFilter(ADDB.BuiltInCategory builtInCategory, bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.ElementCategoryFilter(builtInCategory, invert));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter ElementClassFilter(MS.Type classType, bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.ElementClassFilter(classType, invert));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter ElementIdSetFilter(ICollection<ADDB.ElementId> elementIds)
+        {
+            return new SP.ElementFilter(new ADDB.ElementIdSetFilter(elementIds));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter ElementIsCurveDrivenFilter(bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.ElementIsCurveDrivenFilter(invert));
+        }
+        
+        
+
     }
 }
