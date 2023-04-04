@@ -138,8 +138,54 @@ namespace Spotlight.Selection
         {
             return new SP.ElementFilter(new ADDB.ElementIsCurveDrivenFilter(invert));
         }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter ElementIsElementTypeFilter(bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.ElementIsElementTypeFilter(invert));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter ElementMultiCategoryFilter(ICollection<ADDB.BuiltInCategory> builtInCategories, bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.ElementMulticategoryFilter(builtInCategories, invert));
+        }
         
-        
+        [NodeCategory("Create")]
+        public static SP.ElementFilter ElementMultiCategoryFilter(ICollection<ADDB.ElementId> builtInCategories, bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.ElementMulticategoryFilter(builtInCategories, invert));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter ElementMultiClassFilter(IList<MS.Type> classTypes, bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.ElementMulticlassFilter(classTypes, invert));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter ElementWorksetFilter(ADDB.WorksetId worksetId, bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.ElementWorksetFilter(worksetId, invert));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter ElementExclusionFilter(ICollection<ADDB.ElementId> elementIds)
+        {
+            return new SP.ElementFilter(new ADDB.ExclusionFilter(elementIds));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter FamilySymbolFilter(ADDB.ElementId familyId)
+        {
+            return new SP.ElementFilter(new ADDB.FamilySymbolFilter(familyId));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter VisibleInViewFilter(ADDB.Document doc, ADDB.ElementId viewId, bool invert = false)
+        {
+            return new SP.ElementFilter(new ADDB.VisibleInViewFilter(doc, viewId, invert));
+        }
 
     }
 }
