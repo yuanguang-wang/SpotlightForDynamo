@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
 using SP = Spotlight.Revit;
@@ -185,6 +186,23 @@ namespace Spotlight.Selection
         public static SP.ElementFilter VisibleInViewFilter(ADDB.Document doc, ADDB.ElementId viewId, bool invert = false)
         {
             return new SP.ElementFilter(new ADDB.VisibleInViewFilter(doc, viewId, invert));
+        }
+               
+        // Element Logical Filter //
+        ////////////////////////////
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter LogicalAndFilter(IEnumerable<SP.ElementFilter> elementFilters)
+        {
+            IList<ADDB.ElementFilter> dbElementFilters = (from filters in elementFilters select filters.DbElementFilter).ToList();
+            return new SP.ElementFilter(new ADDB.LogicalAndFilter(dbElementFilters));
+        }
+
+        [NodeCategory("Create")]
+        public static SP.ElementFilter LogicalOrFilter(IEnumerable<SP.ElementFilter> elementFilters)
+        {
+            IList<ADDB.ElementFilter> dbElementFilters = (from filters in elementFilters select filters.DbElementFilter).ToList();
+            return new SP.ElementFilter(new ADDB.LogicalOrFilter(dbElementFilters)); 
         }
 
     }
