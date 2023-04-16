@@ -17,3 +17,38 @@ Specifically for this example, the code behind the node is:
     }
 ```
 No sophisticated logic and code context, just class type conversion, but improve efficiency when the "original" ```LookupParameter()``` need to be used on dynamo platform.
+<br/>
+
+## Category
+- About
+  - Abbreviations(under construction)
+- Cast
+  - Sub Element => Element
+  - Sub ElementFilter => ElementFilter
+- Element
+  - CurtainGrid
+  - Element(in dynamo Database)
+  - Element(in autodesk revit Database)
+  - ElementId
+  - Level
+  - Location
+  - Parameter
+  - Wall
+  - XYZ
+- ElementType
+  - WallType
+- Revit
+  - BuiltInEnumerations
+    - BuiltInParameter
+    - BuiltInCategory
+    - CurveElementType
+    - WallFunction
+    - WallKind
+  - Document
+  - .NET System
+- Selection
+  - ElementFilter
+  - FilteredElementCollector
+  - FilterRule
+  - ParameterFilterRule
+  - RuleType
