@@ -70,6 +70,7 @@
         <Compile Include="DynamoElement.cs" />
         <Compile Include="Element.cs" />
         <Compile Include="ElementId.cs" />
+        <Compile Include="Family.cs" />
         <Compile Include="Level.cs" />
         <Compile Include="Location.cs" />
         <Compile Include="Parameter.cs" />
