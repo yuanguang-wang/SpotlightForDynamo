@@ -59,3 +59,6 @@ No sophisticated logic and code context, just class type conversion, but improve
 - Definition
 - ForgeType
 - Category
+- LinePatternElement / LinePattern
+- GraphicStyle
+- [Visibility Settings]

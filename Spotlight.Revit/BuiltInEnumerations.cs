@@ -74,5 +74,17 @@ namespace Spotlight.Revit
             return GetByKeyword<ADDB.WallKind>(keyword);
         }
 
+        [NodeCategory("Query")]
+        public static List<ADDB.GraphicsStyleType> GraphicsStyleType(string keyword = "")
+        {
+            return GetByKeyword<ADDB.GraphicsStyleType>(keyword);
+        }
+
+        [NodeCategory("Query")]
+        public static List<ADDB.CategoryType> CategoryType(string keyword = "")
+        {
+            return GetByKeyword<ADDB.CategoryType>(keyword);
+        }
+
     }
 }
