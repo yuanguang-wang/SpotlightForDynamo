@@ -52,3 +52,10 @@ No sophisticated logic and code context, just class type conversion, but improve
   - FilterRule
   - ParameterFilterRule
   - RuleType
+
+## Under Construction
+- Geometry Element
+- Family
+- Definition
+- ForgeType
+- Category

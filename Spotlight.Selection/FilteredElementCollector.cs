@@ -3,6 +3,8 @@ using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
 using SP = Spotlight.Revit;
 
+// ReSharper disable InconsistentNaming
+
 namespace Spotlight.Selection
 {
     public class FilteredElementCollector
@@ -34,7 +36,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Query")]
-        public static ICollection<ADDB.ElementId> QueryElementIdByCategory(ADDB.Document doc, ADDB.BuiltInCategory category, bool typeFilter = false)
+        public static ICollection<ADDB.ElementId> GetElementIdByCategory(ADDB.Document doc, ADDB.BuiltInCategory category, bool typeFilter = false)
         {
             ADDB.FilteredElementCollector filteredElementCollector = new ADDB.FilteredElementCollector(doc).OfCategory(category);
             
@@ -51,7 +53,7 @@ namespace Spotlight.Selection
         }
 
         [NodeCategory("Query")]
-        public static ICollection<ADDB.ElementId> QueryElementIdByClass(ADDB.Document doc, System.Type classType, bool typeFilter = false)
+        public static ICollection<ADDB.ElementId> GetElementIdByClass(ADDB.Document doc, System.Type classType, bool typeFilter = false)
         {
             ADDB.FilteredElementCollector filteredElementCollector = new ADDB.FilteredElementCollector(doc).OfClass(classType);
             
