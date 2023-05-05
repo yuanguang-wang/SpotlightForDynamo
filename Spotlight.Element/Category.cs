@@ -96,5 +96,12 @@ namespace Spotlight.Element
         {
             return category.Material;
         }
+
+        [NodeCategory("Create")]
+        public static ADDB.Category AddSubCategory(ADDB.Document doc, ADDB.Category parentCategory, string name)
+        {
+            ADDB.Categories categories = doc.Settings.Categories;
+            return categories.NewSubcategory(parentCategory, name);
+        }
     }
 }

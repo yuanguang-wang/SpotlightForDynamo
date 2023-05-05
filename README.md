@@ -62,3 +62,4 @@ No sophisticated logic and code context, just class type conversion, but improve
 - LinePatternElement / LinePattern
 - GraphicStyle
 - [Visibility Settings]
+- Settings
