@@ -103,5 +103,12 @@ namespace Spotlight.Element
             ADDB.Categories categories = doc.Settings.Categories;
             return categories.NewSubcategory(parentCategory, name);
         }
+
+        [NodeCategory("Actions")]
+        public static void RemoveCategory(ADDB.Document doc, string name)
+        {
+            ADDB.Categories categories = doc.Settings.Categories;
+            categories.Erase(name);
+        }
     }
 }

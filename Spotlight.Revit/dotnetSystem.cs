@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
@@ -66,6 +67,15 @@ namespace Spotlight.Revit
                 return desAttribute.First().Description;
             }
             return string.Empty;
+        }
+    }
+
+    [IsVisibleInDynamoLibrary(false)]
+    public static class GeneralUtility
+    {
+        public static List<TResult> RevitIteratorConvertor<TSource, TResult>(TSource revitIterator)
+        {
+            return null;
         }
     }
 
