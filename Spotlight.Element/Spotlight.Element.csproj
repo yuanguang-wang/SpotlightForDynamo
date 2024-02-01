@@ -114,16 +114,12 @@
         
         <ItemGroup>
             <Dlls Include="$(OutDir)*.dll" />
-            <Pdbs Include="$(OutDir)*.pdb" />
             <Xmls Include="$(OutDir)*.xml" />
-            <Configs Include="$(OutDir)*.config" />
         </ItemGroup>
-        <Copy SourceFiles="@(Dlls)" DestinationFolder="/Volumes/Spotlight/bin" />
-        <Copy SourceFiles="@(Pdbs)" DestinationFolder="/Volumes/Spotlight/bin" />
-        <Copy SourceFiles="@(Xmls)" DestinationFolder="/Volumes/Spotlight/bin" />
-        <Copy SourceFiles="@(Configs)" DestinationFolder="/Volumes/Spotlight/bin" />
-        <MakeDir Directories="/Volumes/Spotlight/dyf" />
-        <MakeDir Directories="/Volumes/Spotlight/extra" />
+        <Copy SourceFiles="@(Dlls)" DestinationFolder="/Volumes/[C] Windows 11 PVM/ProgramData/Autodesk/RVT 2022/Dynamo/2.12/packages/Spotlight/bin" />
+        <Copy SourceFiles="@(Xmls)" DestinationFolder="/Volumes/[C] Windows 11 PVM/ProgramData/Autodesk/RVT 2022/Dynamo/2.12/packages/Spotlight/bin" />
+        <MakeDir Directories="/Volumes/[C] Windows 11 PVM/ProgramData/Autodesk/RVT 2022/Dynamo/2.12/packages/Spotlight/dyf" />
+        <MakeDir Directories="/Volumes/[C] Windows 11 PVM/ProgramData/Autodesk/RVT 2022/Dynamo/2.12/packages/Spotlight/extra" />
 
     </Target>
 
