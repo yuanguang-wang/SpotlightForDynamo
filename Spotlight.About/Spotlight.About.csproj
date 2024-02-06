@@ -80,21 +80,25 @@
     <ItemGroup>
       <None Include="packages.config" />
     </ItemGroup>
+    <ItemGroup>
+      <Content Include="pkg.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
     <Target Name="AfterBuild">
+
         <ItemGroup>
             <Dlls Include="$(OutDir)*.dll" />
-            <Pdbs Include="$(OutDir)*.pdb" />
             <Xmls Include="$(OutDir)*.xml" />
-            <Configs Include="$(OutDir)*.config" />
+            <Pkgs Include="$(OutDir)*.json" />
         </ItemGroup>
-        <Copy SourceFiles="@(Dlls)" DestinationFolder="/Volumes/Spotlight/bin" />
-        <Copy SourceFiles="@(Pdbs)" DestinationFolder="/Volumes/Spotlight/bin" />
-        <Copy SourceFiles="@(Xmls)" DestinationFolder="/Volumes/Spotlight/bin" />
-        <Copy SourceFiles="@(Configs)" DestinationFolder="/Volumes/Spotlight/bin" />
-        <MakeDir Directories="/Volumes/Spotlight/dyf" />
-        <MakeDir Directories="/Volumes/Spotlight/extra" />
+        <Copy SourceFiles="@(Dlls)" DestinationFolder="/Volumes/[C] Windows 11 PVM/Users/yuanguang.wang/AppData/Roaming/Dynamo/Dynamo Revit/2.12/packages/Spotlight/bin" />
+        <Copy SourceFiles="@(Xmls)" DestinationFolder="/Volumes/[C] Windows 11 PVM/Users/yuanguang.wang/AppData/Roaming/Dynamo/Dynamo Revit/2.12/packages/Spotlight/bin" />
+        <Copy SourceFiles="@(Pkgs)" DestinationFolder="/Volumes/[C] Windows 11 PVM/Users/yuanguang.wang/AppData/Roaming/Dynamo/Dynamo Revit/2.12/packages/Spotlight" />
+        <MakeDir Directories="/Volumes/[C] Windows 11 PVM/Users/yuanguang.wang/AppData/Roaming/Dynamo/Dynamo Revit/2.12/packages/Spotlight/dyf" />
+        <MakeDir Directories="/Volumes/[C] Windows 11 PVM/Users/yuanguang.wang/AppData/Roaming/Dynamo/Dynamo Revit/2.12/packages/Spotlight/extra" />
+
     </Target>
-
-
 </Project>

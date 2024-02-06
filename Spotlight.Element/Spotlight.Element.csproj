@@ -109,17 +109,17 @@
       </EmbeddedResource>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    
+
     <Target Name="AfterBuild">
-        
+
         <ItemGroup>
             <Dlls Include="$(OutDir)*.dll" />
             <Xmls Include="$(OutDir)*.xml" />
         </ItemGroup>
-        <Copy SourceFiles="@(Dlls)" DestinationFolder="/Volumes/[C] Windows 11 PVM/ProgramData/Autodesk/RVT 2022/Dynamo/2.12/packages/Spotlight/bin" />
-        <Copy SourceFiles="@(Xmls)" DestinationFolder="/Volumes/[C] Windows 11 PVM/ProgramData/Autodesk/RVT 2022/Dynamo/2.12/packages/Spotlight/bin" />
-        <MakeDir Directories="/Volumes/[C] Windows 11 PVM/ProgramData/Autodesk/RVT 2022/Dynamo/2.12/packages/Spotlight/dyf" />
-        <MakeDir Directories="/Volumes/[C] Windows 11 PVM/ProgramData/Autodesk/RVT 2022/Dynamo/2.12/packages/Spotlight/extra" />
+        <Copy SourceFiles="@(Dlls)" DestinationFolder="/Volumes/[C] Windows 11 PVM/Users/yuanguang.wang/AppData/Roaming/Dynamo/Dynamo Revit/2.12/packages/Spotlight/bin" />
+        <Copy SourceFiles="@(Xmls)" DestinationFolder="/Volumes/[C] Windows 11 PVM/Users/yuanguang.wang/AppData/Roaming/Dynamo/Dynamo Revit/2.12/packages/Spotlight/bin" />
+        <MakeDir Directories="/Volumes/[C] Windows 11 PVM/Users/yuanguang.wang/AppData/Roaming/Dynamo/Dynamo Revit/2.12/packages/Spotlight/dyf" />
+        <MakeDir Directories="/Volumes/[C] Windows 11 PVM/Users/yuanguang.wang/AppData/Roaming/Dynamo/Dynamo Revit/2.12/packages/Spotlight/extra" />
 
     </Target>
 

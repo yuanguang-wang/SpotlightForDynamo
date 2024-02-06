@@ -1,0 +1,16 @@
+{
+  "license": "MIT",
+  "file_hash": null,
+  "name": "SpotlightForRevit",
+  "version":"0.1.0",
+  "description":"Spotlight, Over Here.",
+  "group": "",
+  "keywords": null,
+  "dependencies": [],
+  "contents":"RevitApi Visualisation Nodes",
+  "engine_version":"2.12",
+  "engine": "dynamo",
+  "engine_metadata": "",
+  "site_url": "",
+  "repository_url": ""
+}
