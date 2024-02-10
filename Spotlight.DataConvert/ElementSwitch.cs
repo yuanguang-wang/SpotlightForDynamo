@@ -3,7 +3,7 @@ using DYDG = Autodesk.DesignScript.Geometry;
 using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
 
-namespace Spotlight.Switch
+namespace Spotlight.DataConvert
 {
     public class ElementSwitch
     {

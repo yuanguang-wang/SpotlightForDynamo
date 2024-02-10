@@ -7,8 +7,8 @@
         <ProjectGuid>{E667CF27-B2FD-424A-8803-E334A77C61B5}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Spotlight.Switch</RootNamespace>
-        <AssemblyName>Spotlight.Switch</AssemblyName>
+        <RootNamespace>Spotlight.DataConvert</RootNamespace>
+        <AssemblyName>Spotlight.DataConvert</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>

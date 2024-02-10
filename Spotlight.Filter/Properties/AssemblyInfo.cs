@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Spotlight.Switch")]
+[assembly: AssemblyTitle("Spotlight.Filter")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Spotlight.Switch")]
+[assembly: AssemblyProduct("Spotlight.Filter")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("E667CF27-B2FD-424A-8803-E334A77C61B5")]
+[assembly: Guid("CFA390AB-C0CC-4290-97BB-FF4BF3D77401")]
 
 // Version information for an assembly consists of the following four values:
 //

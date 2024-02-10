@@ -8,7 +8,7 @@ using MS = System;
 
 // ReSharper disable MemberCanBePrivate.Global
 
-namespace Spotlight.Selection
+namespace Spotlight.Filter
 {
     public class ElementFilter
     {

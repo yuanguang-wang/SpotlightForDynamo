@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Spotlight.Filter</name>
+    </assembly>
+    <namespaces>
+        <namespace name="Spotlight.Filter">
+            <category>Spotlight.Filter</category>
+        </namespace>
+    </namespaces>
+</doc>

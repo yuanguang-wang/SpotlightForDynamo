@@ -36,18 +36,6 @@
           <HintPath>..\..\dll\DynamoCore.dll</HintPath>
           <Private>False</Private>
         </Reference>
-        <Reference Include="DynamoServices, Version=2.12.0.5650, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.2.12.0.5650\lib\net48\DynamoServices.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="DynamoUnits, Version=2.12.0.5650, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.12.0.5650\lib\net48\DynamoUnits.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="ProtoGeometry, Version=2.12.0.5475, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.12.0.5650\lib\net48\ProtoGeometry.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
         <Reference Include="RevitAPI">
           <HintPath>..\..\dll\RevitAPI.dll</HintPath>
           <Private>False</Private>
@@ -95,9 +83,6 @@
       </Content>
     </ItemGroup>
     <ItemGroup>
-      <None Include="packages.config" />
-    </ItemGroup>
-    <ItemGroup>
       <EmbeddedResource Include="Resources\SpotlightElementImages.resx">
         <LastGenOutput>SpotlightElementImages.Designer.cs</LastGenOutput>
       </EmbeddedResource>
@@ -107,6 +92,22 @@
       <EmbeddedResource Include="Resources\Spotlight.Element.Small.png">
         <DependentUpon>SpotlightElementImages.resx</DependentUpon>
       </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="DynamoVisualProgramming.DynamoServices" Version="2.12.0.5650" >
+          <PrivateAssets>all</PrivateAssets>
+          <ExcludeAssets>runtime</ExcludeAssets>
+      </PackageReference>
+      <PackageReference Include="DynamoVisualProgramming.ZeroTouchLibrary" Version="2.12.0.5650" >
+          <PrivateAssets>all</PrivateAssets>
+          <ExcludeAssets>runtime</ExcludeAssets>
+      </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Spotlight.Support\Spotlight.Support.csproj">
+        <Project>{643316d1-df05-40ae-aca4-f181307e853e}</Project>
+        <Name>Spotlight.Support</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 

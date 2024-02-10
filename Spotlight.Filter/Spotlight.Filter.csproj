@@ -7,8 +7,8 @@
         <ProjectGuid>{CFA390AB-C0CC-4290-97BB-FF4BF3D77401}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Spotlight.Selection</RootNamespace>
-        <AssemblyName>Spotlight.Selection</AssemblyName>
+        <RootNamespace>Spotlight.Filter</RootNamespace>
+        <AssemblyName>Spotlight.Filter</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -36,10 +36,6 @@
           <HintPath>..\..\dll\DynamoCore.dll</HintPath>
           <Private>False</Private>
         </Reference>
-        <Reference Include="DynamoServices, Version=2.12.0.5650, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.2.12.0.5650\lib\net48\DynamoServices.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
         <Reference Include="RevitAPI">
           <HintPath>..\..\dll\RevitAPI.dll</HintPath>
           <Private>False</Private>
@@ -63,19 +59,18 @@
         <Compile Include="RuleType.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Content Include="images\logo.png" />
       <Content Include="Spotlight.Selection_DynamoCustomization.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Spotlight.Revit\Spotlight.Revit.csproj">
         <Project>{3988d8b8-a80f-4ba2-8a4b-a6947a00b8fa}</Project>
         <Name>Spotlight.Revit</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="DynamoVisualProgramming.DynamoServices" Version="2.12.0.5650" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     

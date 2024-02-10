@@ -3,6 +3,7 @@ using Dynamo.Graph.Nodes;
 using RevitServices.Transactions;
 using ADDB = Autodesk.Revit.DB;
 using DYDB = Revit.Elements;
+using Spotlight.Support;
 
 namespace Spotlight.Element
 {
@@ -66,5 +67,11 @@ namespace Spotlight.Element
             
             TransactionManager.Instance.TransactionTaskDone();
         }
+
+        void WriteXml()
+        {
+            DynamoCustomization.Write(typeof(Element).Namespace);
+        }
+        
     }
 }

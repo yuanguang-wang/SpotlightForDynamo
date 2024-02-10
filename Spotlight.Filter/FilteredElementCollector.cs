@@ -5,7 +5,7 @@ using SP = Spotlight.Revit;
 
 // ReSharper disable InconsistentNaming
 
-namespace Spotlight.Selection
+namespace Spotlight.Filter
 {
     public class FilteredElementCollector
     {

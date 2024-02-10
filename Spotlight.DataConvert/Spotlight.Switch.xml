@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doc>
     <assembly>
-        <name>Spotlight.Switch</name>
+        <name>Spotlight.DataConvert</name>
     </assembly>
     
     <!-- GeometrySwitch Class -->
 
-    <member name="Spotlight.Switch.GeometrySwitch.DSG__Point__RVT">
+    <member name="Spotlight.DataConvert.GeometrySwitch.DSG__Point__RVT">
         <summary>
             Convert [Point] from {Autodesk Design Script Geometry} to {Revit XYZ}
         </summary>
@@ -14,7 +14,7 @@
         <returns name="xyz_RVT">Autodesk.Revit.DB.XYZ</returns>
     </member>
     
-    <member name="Spotlight.Switch.GeometrySwitch.RVT__Point__DSG">
+    <member name="Spotlight.DataConvert.GeometrySwitch.RVT__Point__DSG">
         <summary>
             Convert [Point] from {Revit XYZ} to {Autodesk Design Script Geometry}
         </summary>
@@ -22,7 +22,7 @@
         <returns name="point_DSG">Autodesk.DesignScript.Geometry.Point</returns>
     </member>
 
-    <member name="Spotlight.Switch.GeometrySwitch.DSG__Curve__RVT">
+    <member name="Spotlight.DataConvert.GeometrySwitch.DSG__Curve__RVT">
         <summary>
             Convert [Curve] from {Autodesk Design Script Geometry} to {Revit XYZ}
         </summary>
@@ -30,7 +30,7 @@
         <returns name="curve_RVT">Autodesk.Revit.DB.Curve</returns>
     </member>
 
-    <member name="Spotlight.Switch.GeometrySwitch.RVT__Curve__DSG">
+    <member name="Spotlight.DataConvert.GeometrySwitch.RVT__Curve__DSG">
         <summary>
             Convert [Curve] from {Revit XYZ} to {Autodesk Design Script Geometry}
         </summary>
@@ -40,7 +40,7 @@
     
     <!-- ElementSwitch Class -->
 
-    <member name="Spotlight.Switch.ElementSwitch.DYN__Wall__RVT">
+    <member name="Spotlight.DataConvert.ElementSwitch.DYN__Wall__RVT">
         <summary>
             Convert [Wall] from {Dynamo Element} to {Revit Element}
         </summary>
@@ -48,7 +48,7 @@
         <returns name="wall_RVT">Autodesk.Revit.DB.Wall</returns>
     </member>
 
-    <member name="Spotlight.Switch.ElementSwitch.RVT__Wall__DYN">
+    <member name="Spotlight.DataConvert.ElementSwitch.RVT__Wall__DYN">
         <summary>
             Convert [Wall] from {Revit Element} to {Dynamo Element}
         </summary>
@@ -56,7 +56,7 @@
         <returns name="wall_DYN">Revit.Elements.Wall in RevitNodes.dll</returns>
     </member>
 
-    <member name="Spotlight.Switch.ElementSwitch.DYN__ModelCurve__RVT">
+    <member name="Spotlight.DataConvert.ElementSwitch.DYN__ModelCurve__RVT">
         <summary>
             Convert [Model Curve] from {Dynamo Element} to {Revit Element}
         </summary>
@@ -64,7 +64,7 @@
         <returns name="modelCurve_RVT">Autodesk.Revit.DB.ModelCurve</returns>
     </member>
 
-    <member name="Spotlight.Switch.ElementSwitch.DYN__ModelCurve__DSG">
+    <member name="Spotlight.DataConvert.ElementSwitch.DYN__ModelCurve__DSG">
         <summary>
             Convert [Model Curve] from {Dynamo Element} to {Autodesk Design Script Geometry}
         </summary>

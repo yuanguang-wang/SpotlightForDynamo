@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Spotlight.DataConvert</name>
+    </assembly>
+    <namespaces>
+        <namespace name="Spotlight.DataConvert">
+            <category>Spotlight.DataConvert</category>
+        </namespace>
+    </namespaces>
+</doc>

@@ -4,7 +4,7 @@ using Dynamo.Graph.Nodes;
 using ADDB = Autodesk.Revit.DB;
 
 
-namespace Spotlight.Selection
+namespace Spotlight.Filter
 {
     public class FilterRule
     {
